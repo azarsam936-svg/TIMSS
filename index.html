@@ -1,0 +1,2640 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بانک تحلیلی سوالات تیمز علوم | دبیرخانه علوم تجربی</title>
+<style>
+/* ===================== TIMSS Science Bank — Stylesheet ===================== */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+:root{
+  --ink-900:#171233;
+  --ink-700:#332b63;
+  --ink-500:#5b4fa3;
+  --indigo:#4338CA;
+  --violet:#7C3AED;
+  --cyan:#06B6D4;
+  --sky:#38BDF8;
+  --bg:#F3F4FC;
+  --bg-2:#EAEBFB;
+  --glass: rgba(255,255,255,.62);
+  --glass-strong: rgba(255,255,255,.86);
+  --border-glass: rgba(255,255,255,.55);
+  --shadow-lg: 0 20px 45px -18px rgba(67,56,202,.35);
+  --shadow-sm: 0 8px 20px -10px rgba(67,56,202,.28);
+  --green: #16a34a;
+  --green-bg: rgba(34,197,94,.09);
+  --green-border: rgba(22,163,74,.35);
+  --blue: #2563eb;
+  --blue-bg: rgba(59,130,246,.09);
+  --blue-border: rgba(37,99,235,.32);
+  --orange:#ea580c;
+  --orange-bg: rgba(249,115,22,.10);
+  --orange-border: rgba(234,88,12,.32);
+  --sunset-1:#FF7A45;
+  --sunset-2:#FF5064;
+  --sunset-3:#FFB199;
+  --radius-xl: 28px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:'Vazirmatn', Tahoma, sans-serif;
+  background:
+    radial-gradient(1100px 620px at 8% -10%, rgba(124,58,237,.20), transparent 60%),
+    radial-gradient(900px 560px at 100% 0%, rgba(6,182,212,.16), transparent 55%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  color:var(--ink-900);
+  direction:rtl;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+.hidden{display:none !important;}
+img{max-width:100%;display:block;}
+button{font-family:inherit;cursor:pointer;}
+a{color:inherit;text-decoration:none;}
+
+/* ---------- Blob decoration ---------- */
+.bg-blob{
+  position:fixed; inset:auto auto auto auto; z-index:-1; filter:blur(60px); opacity:.55; pointer-events:none;
+}
+.bg-blob.b1{width:420px;height:420px;top:-120px;right:-140px;background:radial-gradient(circle, var(--violet), transparent 70%);}
+.bg-blob.b2{width:380px;height:380px;bottom:-140px;left:-120px;background:radial-gradient(circle, var(--cyan), transparent 70%);}
+
+/* ---------- Header ---------- */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter:blur(18px);
+  background:rgba(255,255,255,.55);
+  border-bottom:1px solid rgba(255,255,255,.6);
+}
+.header-top{
+  max-width:1180px;margin:0 auto;padding:14px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.logo-wrap{
+  width:52px;height:52px;border-radius:16px;
+  background:linear-gradient(135deg, var(--indigo), var(--violet) 55%, var(--cyan));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow-sm);
+  overflow:hidden;
+  flex-shrink:0;
+}
+.logo-wrap img{width:100%;height:100%;object-fit:cover;}
+.brand-text .t1{font-weight:800;font-size:19px;color:var(--ink-900);line-height:1.3;}
+.brand-text .t2{font-weight:500;font-size:12px;color:var(--ink-500);}
+
+/* ---------- Image banner (full-width, below header) ---------- */
+.image-banner{
+  position:relative;overflow:hidden;
+  min-height:260px;
+  display:flex;align-items:flex-end;
+  background:linear-gradient(125deg, var(--sunset-1), var(--sunset-2) 55%, var(--violet));
+}
+.image-banner::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(650px 340px at 85% -10%, rgba(255,255,255,.30), transparent 60%);
+}
+.image-banner img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;
+}
+.image-banner.has-img img{display:block;}
+.image-banner.has-img::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg, rgba(23,18,51,.72) 0%, rgba(23,18,51,.28) 55%, rgba(23,18,51,.05) 100%);
+}
+.image-banner .ph{
+  position:absolute;top:16px;left:16px;z-index:2;
+  font-size:11.5px;color:#fff;background:rgba(23,18,51,.35);
+  border:1px dashed rgba(255,255,255,.6);padding:6px 12px;border-radius:999px;
+}
+.image-banner.has-img .ph{display:none;}
+
+/* ---------- Section banners (chapter view / intro view) ---------- */
+.section-banner{
+  position:relative;overflow:hidden;border-radius:var(--radius-xl);
+  min-height:150px;margin-bottom:24px;
+  display:flex;align-items:flex-end;
+  background:linear-gradient(125deg, var(--violet), var(--indigo) 60%, var(--cyan));
+  box-shadow:var(--shadow-lg);
+}
+.section-banner.tone-sunset{background:linear-gradient(125deg, var(--sunset-1), var(--sunset-2) 55%, var(--violet));}
+.section-banner::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(500px 260px at 88% -10%, rgba(255,255,255,.28), transparent 60%);
+}
+.section-banner img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;
+}
+.section-banner.has-img img{display:block;}
+.section-banner.has-img::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg, rgba(23,18,51,.70) 0%, rgba(23,18,51,.22) 55%, rgba(23,18,51,.02) 100%);
+}
+.section-banner-overlay{position:relative;z-index:1;padding:24px 28px;color:#fff;width:100%;}
+.section-banner-overlay h2{margin:0 0 6px;font-size:clamp(19px,2.6vw,24px);font-weight:800;text-shadow:0 2px 14px rgba(0,0,0,.18);}
+.section-banner-overlay p{margin:0;font-size:12.5px;opacity:.92;line-height:1.85;max-width:560px;text-shadow:0 1px 10px rgba(0,0,0,.15);}
+.section-banner .ph{
+  position:absolute;top:14px;left:14px;z-index:2;
+  font-size:11px;color:#fff;background:rgba(23,18,51,.35);
+  border:1px dashed rgba(255,255,255,.6);padding:5px 11px;border-radius:999px;
+}
+.section-banner.has-img .ph{display:none;}
+@media (max-width:640px){ .section-banner{min-height:120px;} }
+
+/* ---------- Meta panel (before question) ---------- */
+.meta-panel{
+  background:rgba(255,255,255,.7);border:1px solid rgba(91,79,163,.18);
+  border-radius:14px;padding:12px 16px;margin-bottom:14px;
+  display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;
+}
+@media (max-width:560px){ .meta-panel{grid-template-columns:1fr;} }
+.meta-row{display:flex;gap:6px;font-size:12.5px;color:var(--ink-700);line-height:1.9;}
+.meta-row .k{font-weight:800;color:var(--ink-500);flex-shrink:0;}
+.meta-row .v{font-weight:600;}
+.meta-row.stars-row .v{color:var(--orange);letter-spacing:1px;}
+
+/* ---------- Media slots (intro view: image + video) ---------- */
+.media-slot{
+  border-radius:14px;border:1.5px dashed rgba(91,79,163,.4);
+  background:rgba(255,255,255,.55);
+  min-height:140px;display:flex;align-items:center;justify-content:center;
+  overflow:hidden;margin-bottom:14px;position:relative;
+}
+.media-slot img, .media-slot video{width:100%;max-height:320px;object-fit:contain;display:none;}
+.media-slot.has-media{border-style:solid;background:#0d0b21;}
+.media-slot.has-media img, .media-slot.has-media video{display:block;}
+.media-slot .ph{font-size:12px;color:var(--ink-500);text-align:center;padding:14px;line-height:1.9;}
+.media-slot.has-media .ph{display:none;}
+.image-banner-overlay{
+  position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:36px 20px 30px;color:#fff;width:100%;
+}
+.image-banner-overlay h1{margin:0 0 10px;font-size:clamp(22px,3.4vw,30px);font-weight:800;text-shadow:0 2px 18px rgba(0,0,0,.18);}
+.image-banner-overlay p{margin:0;font-size:14px;line-height:1.95;opacity:.95;max-width:620px;text-shadow:0 1px 12px rgba(0,0,0,.15);}
+@media (max-width:640px){ .image-banner{min-height:210px;} }
+
+/* ---------- Main nav (two big buttons) ---------- */
+.main-nav{
+  max-width:1180px;margin:0 auto;padding:26px 20px 6px;
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+}
+@media (max-width:720px){ .main-nav{grid-template-columns:1fr;} }
+
+.nav-card{
+  position:relative;border-radius:var(--radius-xl);
+  padding:26px 24px;min-height:150px;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid var(--border-glass);
+  box-shadow:var(--shadow-sm);
+  display:flex;flex-direction:column;gap:10px;justify-content:center;
+  transition:transform .25s ease, box-shadow .25s ease;
+  text-align:right;
+  overflow:hidden;
+}
+.nav-card::after{
+  content:"";position:absolute;inset:0;opacity:0;transition:opacity .25s ease;
+  background:linear-gradient(120deg, rgba(67,56,202,.10), rgba(6,182,212,.10));
+}
+.nav-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
+.nav-card:hover::after{opacity:1;}
+.nav-icon{
+  width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+  font-size:24px;color:#fff;margin-bottom:4px;
+  box-shadow:var(--shadow-sm);
+}
+.nav-card.card-a .nav-icon{background:linear-gradient(135deg, var(--indigo), var(--violet));}
+.nav-card.card-b .nav-icon{background:linear-gradient(135deg, var(--cyan), var(--sky));}
+.nav-card h3{margin:0;font-size:19px;font-weight:800;color:var(--ink-900);position:relative;z-index:1;}
+.nav-card .sub{margin:0;font-size:13px;color:var(--ink-500);font-weight:500;position:relative;z-index:1;}
+.nav-card .arrow{position:absolute;left:20px;top:24px;font-size:20px;color:var(--ink-500);opacity:.5;}
+
+/* ---------- Announcements ---------- */
+.announcements{
+  max-width:1180px;margin:0 auto;padding:22px 20px 10px;
+  display:grid;grid-template-columns:1fr 1fr;gap:18px;
+}
+@media (max-width:720px){ .announcements{grid-template-columns:1fr;} }
+.ann-card{
+  border-radius:var(--radius-lg);
+  background:var(--glass-strong);
+  border:1px solid var(--border-glass);
+  box-shadow:var(--shadow-sm);
+  display:flex;gap:14px;padding:16px;align-items:center;
+}
+.ann-img{
+  width:96px;height:96px;border-radius:14px;flex-shrink:0;
+  background:linear-gradient(135deg, rgba(67,56,202,.14), rgba(6,182,212,.14));
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  border:1px dashed rgba(91,79,163,.35);
+}
+.ann-img img{width:100%;height:100%;object-fit:contain;display:none;}
+.ann-img.has-img{border-style:solid;background:#fff;}
+.ann-img.has-img img{display:block;}
+.ann-img .ph{font-size:20px;opacity:.55;}
+.ann-body .tag{
+  display:inline-block;font-size:11px;font-weight:700;color:var(--indigo);
+  background:rgba(67,56,202,.10);padding:3px 10px;border-radius:999px;margin-bottom:6px;
+}
+.ann-body h4{margin:0 0 4px;font-size:15px;font-weight:800;}
+.ann-body p{margin:0;font-size:12.5px;color:var(--ink-500);line-height:1.8;}
+
+/* ---------- Section title / back bar ---------- */
+.section-wrap{max-width:1180px;margin:0 auto;padding:26px 20px 60px;}
+.back-bar{display:flex;align-items:center;gap:10px;margin-bottom:22px;flex-wrap:wrap;}
+.btn-back{
+  display:flex;align-items:center;gap:6px;
+  background:var(--glass-strong);border:1px solid var(--border-glass);
+  padding:9px 16px;border-radius:999px;font-size:13px;font-weight:700;color:var(--ink-700);
+  box-shadow:var(--shadow-sm);
+}
+.crumbs{font-size:13px;color:var(--ink-500);font-weight:500;}
+.crumbs b{color:var(--ink-900);}
+
+.page-hero{
+  border-radius:var(--radius-xl);overflow:hidden;position:relative;
+  min-height:130px;margin-bottom:26px;
+  background:linear-gradient(120deg, var(--violet), var(--indigo) 70%);
+  display:flex;align-items:center;padding:26px 30px;color:#fff;
+  box-shadow:var(--shadow-lg);
+}
+.page-hero .ph-img{
+  position:absolute;inset:0;opacity:.16;background-size:cover;background-position:center;
+}
+.page-hero h2{position:relative;z-index:1;margin:0 0 6px;font-size:22px;font-weight:800;}
+.page-hero p{position:relative;z-index:1;margin:0;font-size:13px;opacity:.9;max-width:600px;line-height:1.8;}
+
+/* ---------- Grade select ---------- */
+.grade-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media (max-width:820px){ .grade-grid{grid-template-columns:1fr;} }
+.grade-card{
+  border-radius:var(--radius-xl);padding:30px 22px;text-align:center;
+  background:var(--glass);border:1px solid var(--border-glass);box-shadow:var(--shadow-sm);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.grade-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+.grade-badge{
+  width:74px;height:74px;border-radius:22px;margin:0 auto 16px;
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:26px;
+  box-shadow:var(--shadow-sm);
+}
+.grade-card:nth-child(1) .grade-badge{background:linear-gradient(135deg,#4338CA,#7C3AED);}
+.grade-card:nth-child(2) .grade-badge{background:linear-gradient(135deg, var(--sunset-1), var(--sunset-2));}
+.grade-card:nth-child(3) .grade-badge{background:linear-gradient(135deg,#06B6D4,#38BDF8);}
+.grade-card h3{margin:0 0 6px;font-size:18px;font-weight:800;}
+.grade-card p{margin:0;font-size:12.5px;color:var(--ink-500);}
+.grade-count{
+  display:inline-block;margin-top:14px;font-size:11.5px;font-weight:700;color:var(--indigo);
+  background:rgba(67,56,202,.10);padding:4px 12px;border-radius:999px;
+}
+
+/* ---------- Chapter grid ---------- */
+.chapter-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+@media (max-width:900px){ .chapter-grid{grid-template-columns:repeat(3,1fr);} }
+@media (max-width:560px){ .chapter-grid{grid-template-columns:repeat(2,1fr);} }
+.chapter-card{
+  position:relative;border-radius:var(--radius-lg);padding:20px 12px;text-align:center;
+  background:var(--glass);border:1px solid var(--border-glass);box-shadow:var(--shadow-sm);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.chapter-card:not(.empty):hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.chapter-num{
+  width:46px;height:46px;border-radius:14px;margin:0 auto 10px;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;color:#fff;
+  background:linear-gradient(135deg, var(--indigo), var(--cyan));
+}
+.chapter-card:nth-child(3n+2):not(.empty) .chapter-num{background:linear-gradient(135deg, var(--sunset-1), var(--sunset-2));}
+.chapter-card:nth-child(3n):not(.empty) .chapter-num{background:linear-gradient(135deg, var(--violet), var(--indigo));}
+.chapter-card.empty .chapter-num{background:linear-gradient(135deg,#c7c9e8,#dfe1f5);color:#8a86b3;}
+.chapter-card h4{margin:0;font-size:13px;font-weight:700;color:var(--ink-900);}
+.chapter-card .qcount{margin-top:6px;font-size:11px;color:var(--ink-500);font-weight:600;}
+.chapter-card.empty{opacity:.65;cursor:default;}
+.chapter-card.empty .qcount{color:#a3a0c4;}
+.chapter-card:not(.empty){cursor:pointer;}
+
+/* ---------- Question list ---------- */
+.qmeta-bar{
+  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;
+}
+.badge{
+  font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:999px;
+  background:rgba(91,79,163,.09);color:var(--ink-700);
+  display:inline-flex;align-items:center;gap:5px;
+}
+.badge.stars{background:rgba(234,88,12,.10);color:var(--orange);}
+.badge.year{background:rgba(6,182,212,.12);color:#0e7490;}
+
+.q-card{
+  border-radius:var(--radius-lg);padding:22px 22px 18px;margin-bottom:22px;
+  border:1px solid var(--green-border);background:var(--green-bg);
+  box-shadow:var(--shadow-sm);
+}
+.q-card .q-label{
+  display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:var(--green);
+  background:rgba(255,255,255,.65);padding:4px 12px;border-radius:999px;margin-bottom:12px;
+}
+.q-body{font-size:16px;line-height:2.2;color:var(--ink-900);white-space:pre-line;font-weight:500;}
+
+.similar-card{
+  border-radius:var(--radius-lg);padding:20px 22px 16px;margin:14px 0 22px;
+  border:1px solid var(--blue-border);background:var(--blue-bg);
+}
+.similar-card .q-label{
+  color:var(--blue);
+}
+
+.img-slot{
+  margin:14px 0;border-radius:14px;border:1.5px dashed rgba(91,79,163,.4);
+  background:rgba(255,255,255,.55);
+  min-height:70px;display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.img-slot img{display:none;width:100%;max-height:420px;object-fit:contain;}
+.img-slot.has-img{border-style:solid;background:transparent;}
+.img-slot.has-img img{display:block;}
+.img-slot .ph{font-size:12px;color:var(--ink-500);text-align:center;padding:14px;line-height:1.9;}
+.img-slot.has-img .ph{display:none;}
+
+.toggle-btn{
+  margin-top:6px;display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg, var(--indigo), var(--violet));
+  color:#fff;border:none;padding:10px 20px;border-radius:999px;
+  font-size:13px;font-weight:700;box-shadow:var(--shadow-sm);
+  transition:transform .18s ease;
+}
+.toggle-btn:hover{transform:translateY(-2px);}
+.toggle-btn .chev{transition:transform .25s ease;font-size:11px;}
+.toggle-btn.open .chev{transform:rotate(180deg);}
+
+.answer-drawer{
+  max-height:0;overflow:hidden;transition:max-height .35s ease;
+}
+.answer-drawer.open{max-height:2000px;}
+.answer-inner{
+  margin-top:14px;padding:22px 22px;border-radius:16px;
+  background:linear-gradient(160deg, rgba(249,115,22,.13), rgba(255,177,153,.10));
+  border:1px solid var(--orange-border);
+  border-right:4px solid var(--orange);
+  font-size:16px;line-height:2.3;color:#6c2c0f;white-space:pre-line;font-weight:600;
+  letter-spacing:.1px;
+}
+.answer-inner .a-title{
+  font-weight:900;color:var(--orange);font-size:14.5px;margin-bottom:12px;
+  display:flex;align-items:center;gap:7px;
+  padding-bottom:10px;border-bottom:1px dashed var(--orange-border);
+}
+
+.empty-note{
+  text-align:center;padding:60px 20px;color:var(--ink-500);
+  background:var(--glass);border:1px dashed rgba(91,79,163,.35);border-radius:var(--radius-lg);
+  font-size:14px;line-height:2;
+}
+.empty-note .big{font-size:40px;display:block;margin-bottom:10px;}
+
+/* ---------- Footer / contact ---------- */
+.site-footer{
+  margin-top:40px;background:linear-gradient(120deg, var(--ink-900), #2a2160 65%, var(--indigo));
+  color:#fff;padding:44px 20px 26px;
+  border-top:3px solid transparent;
+  border-image:linear-gradient(90deg, var(--sunset-1), var(--violet), var(--cyan)) 1;
+}
+.footer-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px;}
+@media (max-width:820px){ .footer-inner{grid-template-columns:1fr;} }
+.footer-inner h4{font-size:14px;font-weight:800;margin:0 0 14px;color:#fff;}
+.footer-brand p{font-size:12.5px;color:rgba(255,255,255,.72);line-height:2;max-width:340px;}
+.footer-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+.footer-links li{font-size:13px;color:rgba(255,255,255,.82);}
+.footer-contact-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.85);margin-bottom:12px;}
+.footer-contact-item .ic{
+  width:32px;height:32px;border-radius:10px;background:rgba(255,255,255,.12);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.social-row{display:flex;gap:10px;margin-top:8px;}
+.social-row a{
+  width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.12);
+  display:flex;align-items:center;justify-content:center;font-size:14px;
+  transition:background .2s ease;
+}
+.social-row a:hover{background:rgba(255,255,255,.24);}
+.footer-bottom{
+  max-width:1180px;margin:30px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);
+  font-size:12px;color:rgba(255,255,255,.6);text-align:center;
+}
+
+/* ---------- Contact form ---------- */
+.contact-form{display:grid;gap:10px;max-width:340px;}
+.contact-form input, .contact-form textarea{
+  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);
+  border-radius:10px;padding:10px 12px;color:#fff;font-family:inherit;font-size:12.5px;
+}
+.contact-form input::placeholder, .contact-form textarea::placeholder{color:rgba(255,255,255,.55);}
+.contact-form button{
+  background:linear-gradient(135deg, var(--cyan), var(--sky));
+  border:none;color:#04202b;font-weight:800;padding:10px;border-radius:10px;font-size:13px;
+}
+
+/* ---------- Intro view content ---------- */
+.intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;}
+@media (max-width:820px){ .intro-grid{grid-template-columns:1fr;} }
+.intro-card{
+  background:var(--glass-strong);border:1px solid var(--border-glass);border-radius:var(--radius-lg);
+  padding:24px;box-shadow:var(--shadow-sm);
+}
+.intro-card h3{margin:0 0 10px;font-size:16px;font-weight:800;}
+.intro-card p{font-size:13.5px;line-height:2.1;color:var(--ink-700);margin:0 0 10px;}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;}
+.stat-box{
+  background:rgba(67,56,202,.08);border-radius:14px;padding:14px;text-align:center;
+}
+.stat-box b{display:block;font-size:20px;color:var(--indigo);font-weight:900;}
+.stat-box span{font-size:11px;color:var(--ink-500);font-weight:600;}
+.timeline{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;}
+.timeline li{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:var(--ink-700);line-height:1.9;}
+.timeline .dot{
+  width:26px;height:26px;border-radius:9px;background:linear-gradient(135deg,var(--indigo),var(--cyan));
+  color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;
+}
+
+</style>
+</head>
+<body>
+
+<div class="bg-blob b1"></div>
+<div class="bg-blob b2"></div>
+
+<!-- =================== HEADER =================== -->
+<header class="site-header">
+  <div class="header-top">
+    <div class="brand">
+      <div class="logo-wrap">
+        <!-- محل قرار دادن لوگو: می‌توانید مقدار src را با یک تصویر Base64 جایگزین کنید -->
+        <img id="siteLogoImg" src="data:image/png;base64,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" alt="لوگوی بانک سوالات تیمز علوم">
+        <span id="siteLogoFallback" style="color:#fff;font-weight:900;font-size:20px;"></span>
+      </div>
+      <div class="brand-text">
+        <div class="t1">بانک تحلیلی سوالات تیمز علوم</div>
+        <div class="t2">دبیرخانه علوم تجربی — پایه هفتم، هشتم و نهم</div>
+      </div>
+    </div>
+    <button class="btn-back" onclick="goHome()">🏠 صفحه اصلی</button>
+  </div>
+</header>
+
+<!-- =================== IMAGE BANNER =================== -->
+<div class="image-banner" id="imageBannerBox">
+  <!-- محل قرار دادن تصویر بنر به صورت Base64: مقدار src تگ img زیر را جایگزین کنید -->
+  <img id="bannerImg" src="https://drive.google.com/thumbnail?id=1pfIPjKJoGtsPNW13HyxiLVx2rvqzNtVF&sz=w1000" alt="تصویر بنر">
+  <div class="image-banner-overlay">
+    <h1>مهارت‌آموزی علوم تجربی با نگاه تیمز</h1>
+    <p>
+  </div>
+  <span class="ph" id="bannerPh">🖼️ تصویر بنر (Base64)</span>
+</div>
+
+<!-- =================== HOME VIEW =================== -->
+<div id="view-home">
+  <nav class="main-nav">
+    <button class="nav-card card-a" onclick="showIntro()">
+      <span class="nav-icon">📘</span>
+      <h3>معرفی TIMSS</h3>
+      <p class="sub">آشنایی با مطالعه بین‌المللی روند علوم و ریاضیات</p>
+      <span class="arrow">‹</span>
+    </button>
+    <button class="nav-card card-b" onclick="showBank()">
+      <span class="nav-icon">🗂️</span>
+      <h3>بانک سوالات تیمز</h3>
+      <p class="sub">بانک تحلیلی سوالات تیمز علوم — پایه هفتم، هشتم و نهم</p>
+      <span class="arrow">‹</span>
+    </button>
+  </nav>
+
+  <section class="announcements">
+    <div class="ann-card">
+      <div class="ann-img">
+        <!-- محل تصویر اعلان اول به صورت Base64 -->
+        <img id="ann1Img" src="" alt="تصویر اعلان">
+        <span class="ph">📣</span>
+      </div>
+      <div class="ann-body">
+        <span class="tag">اطلاعیه</span>
+        <h4>به‌روزرسانی بانک سوالات</h4>
+        <p>فصل‌های جدید علوم هفتم، هشتم و نهم به‌مرور به بانک سوالات اضافه می‌شوند.</p>
+      </div>
+    </div>
+    <div class="ann-card">
+      <div class="ann-img">
+        <!-- محل تصویر اعلان دوم به صورت Base64 -->
+        <img id="ann2Img" src="" alt="تصویر اعلان">
+        <span class="ph">📅</span>
+      </div>
+      <div class="ann-body">
+        <span class="tag">رویداد</span>
+        <h4>کارگاه آموزشی دبیران علوم</h4>
+        <p>کارگاه تحلیل سوالات تیمز ویژه دبیران علوم تجربی استان به‌زودی برگزار می‌شود.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- =================== INTRO VIEW =================== -->
+<div id="view-intro" class="hidden">
+  <div class="section-wrap">
+    <div class="back-bar">
+      <button class="btn-back" onclick="goHome()">→ بازگشت به صفحه اصلی</button>
+      <span class="crumbs">صفحه اصلی / <b>معرفی TIMSS</b></span>
+    </div>
+
+    <div class="section-banner" id="introBannerBox">
+      <!-- محل قرار دادن تصویر بنر بخش معرفی TIMSS به صورت Base64 -->
+      <img id="introBannerImg" src="" alt="بنر معرفی تیمز">
+      <div class="section-banner-overlay">
+        <h2>مطالعه بین‌المللی TIMSS چیست؟</h2>
+        <p>Trends in International Mathematics and Science Study</p>
+      </div>
+      <span class="ph">🖼️ بنر معرفی TIMSS (Base64)</span>
+    </div>
+
+    <div class="intro-grid">
+      <div class="intro-card">
+        <h3>درباره تیمز</h3>
+
+<!-- محل قرار دادن تصویر توضیحی TIMSS -->
+<div class="media-slot" id="introImageSlot" style="border-style:solid;background:transparent;min-height:auto;border-color:#7C3AED;display:block !important;">
+  <img 
+    id="introImage" 
+    src="https://www.iea.nl/sites/default/files/video_thumbnails/va7SExNBLbI.jpg" 
+    alt="تصویر معرفی تیمز"
+    style="width:100%; max-height:320px; object-fit:contain; display:block !important; border-radius:12px;"
+    onerror="this.style.display='block'; this.src='https://www.iea.nl/sites/default/files/video_thumbnails/va7SExNBLbI.jpg';"
+  >
+  <span class="ph" style="display:none !important;">🖼️ محل تصویر (Base64)</span>
+</div>
+
+        <!-- محل قرار دادن فیلم معرفی --->
+<div class="media-slot has-media" id="introVideoSlot" style="background:transparent;border-color:#7C3AED;">
+    <iframe src="https://www.aparat.com/video/video/embed/videohash/azjbf9k/vt/frame?titleShow=true" 
+            width="100%" 
+            height="360" 
+            frameborder="0" 
+            allowfullscreen>
+    </iframe>
+</div>
+
+        <p>TIMSS مخفف عبارت Trends in International Mathematics and Science Study است؛ مطالعه‌ای بین‌المللی که هر چهار سال یک‌بار توسط انجمن بین‌المللی ارزشیابی پیشرفت تحصیلی (IEA) برگزار می‌شود و دانش و مهارت‌های علوم و ریاضی دانش‌آموزان پایه‌های چهارم و هشتم را در کشورهای شرکت‌کننده می‌سنجد.</p>
+        <p>سوالات تیمز برخلاف آزمون‌های متداول کتاب‌محور، بر تحلیل، استدلال، کاربرد مفاهیم و مهارت‌های یادگیری علوم تجربی تمرکز دارند؛ به همین دلیل بانک پیش‌رو، علاوه بر سوالات اصلی تیمز، برای هر سوال یک «سوال مشابه تألیفی» نیز طراحی کرده تا دانش‌آموز با الگوی تفکر این سوالات آشنا شود.</p>
+        <div class="stat-row">
+          <div class="stat-box"><b>+۵۰</b><span>سوال تحلیلی</span></div>
+          <div class="stat-box"><b>۳</b><span>پایه تحصیلی</span></div>
+          <div class="stat-box"><b>۱۵</b><span>فصل علوم تجربی</span></div>
+          <div class="stat-box"><b>IEA</b><span>استاندارد بین‌المللی</span></div>
+        </div>
+      </div>
+      <div class="intro-card">
+        <h3>ساختار سوالات این بانک</h3>
+        <ul class="timeline">
+          <li><span class="dot">۱</span> مشخصات سوال شامل حوزه محتوایی، حیطه شناختی و سطح دشواری</li>
+          <li><span class="dot">۲</span> متن سوال اصلی تیمز (پس‌زمینه سبز)</li>
+          <li><span class="dot">۳</span> نمایش پاسخ و تحلیل به‌صورت کشویی</li>
+          <li><span class="dot">۴</span> سوال مشابه تألیفی برای تمرین بیشتر (پس‌زمینه آبی)</li>
+          <li><span class="dot">۵</span> پاسخ و تحلیل سوال تألیفی</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== GRADE SELECT VIEW =================== -->
+<div id="view-grades" class="hidden">
+  <div class="section-wrap">
+    <div class="back-bar">
+      <button class="btn-back" onclick="goHome()">→ بازگشت به صفحه اصلی</button>
+      <span class="crumbs">صفحه اصلی / <b>بانک سوالات تیمز</b></span>
+    </div>
+    <div class="page-hero">
+      <h2>بانک سوالات تیمز علوم</h2>
+      <p>بانک تحلیلی سوالات تیمز علوم — پایه هفتم، هشتم و نهم. یک پایه را انتخاب کنید تا فصل‌های آن نمایش داده شود.</p>
+    </div>
+    <div class="grade-grid" id="gradeGrid"></div>
+  </div>
+</div>
+
+<!-- =================== CHAPTER GRID VIEW =================== -->
+<div id="view-chapters" class="hidden">
+  <div class="section-wrap">
+    <div class="back-bar">
+      <button class="btn-back" onclick="showBank()">→ بازگشت به انتخاب پایه</button>
+      <span class="crumbs">صفحه اصلی / بانک سوالات / <b id="chapterGradeLabel">پایه هفتم</b></span>
+    </div>
+    <div class="page-hero">
+      <h2 id="chapterHeroTitle">علوم پایه هفتم</h2>
+      <p>یکی از ۱۵ فصل کتاب علوم تجربی را انتخاب کنید تا سوالات تحلیلی مربوط به آن فصل نمایش داده شود.</p>
+    </div>
+    <div class="chapter-grid" id="chapterGrid"></div>
+  </div>
+</div>
+
+<!-- =================== QUESTIONS VIEW =================== -->
+<div id="view-questions" class="hidden">
+  <div class="section-wrap">
+    <div class="back-bar">
+      <button class="btn-back" id="backToChaptersBtn">→ بازگشت به فصل‌ها</button>
+      <span class="crumbs">صفحه اصلی / بانک سوالات / <b id="qGradeLabel"></b> / <b id="qChapterLabel"></b></span>
+    </div>
+    <div class="section-banner" id="chapterBannerBox">
+      <!-- محل تصویر بنر این فصل به صورت Base64: مقدار را در آبجکت CHAPTER_BANNERS در data.js وارد کنید -->
+      <img id="chapterBannerImg" src="" alt="بنر فصل">
+      <div class="section-banner-overlay">
+        <h2 id="qBannerTitle">فصل</h2>
+        <p id="qBannerSub"></p>
+      </div>
+      <span class="ph" id="chapterBannerPh">🖼️ بنر این فصل (Base64)</span>
+    </div>
+
+    <div id="questionsContainer"></div>
+  </div>
+</div>
+
+<!-- =================== FOOTER / CONTACT =================== -->
+<footer class="site-footer" id="contact">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h4>بانک تحلیلی سوالات تیمز علوم</h4>
+      <p>ابزاری برای دبیران و دانش‌آموزان علوم تجربی جهت آشنایی و تمرین با الگوی سوالات بین‌المللی TIMSS، طراحی‌شده در راستای ارتقای مهارت‌های تحلیلی و علمی دانش‌آموزان.</p>
+      <div class="social-row">
+        <a href="#" title="اینستاگرام">📷</a>
+        <a href="#" title="تلگرام">✈️</a>
+        <a href="#" title="ایمیل">✉️</a>
+      </div>
+    </div>
+    <div class="footer-mid">
+      <h4>دسترسی سریع</h4>
+      <ul class="footer-links">
+        <li><a href="#" onclick="goHome();return false;">صفحه اصلی</a></li>
+        <li><a href="#" onclick="showIntro();return false;">معرفی TIMSS</a></li>
+        <li><a href="#" onclick="showBank();return false;">بانک سوالات تیمز</a></li>
+        <li><a href="#contact">ارتباط با ما</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>ارتباط با ما</h4>
+      <div class="footer-contact-item"><span class="ic">📍</span> تبریز — محله لاله</div>
+      <div class="footer-contact-item"><span class="ic">✉️</span> info@example.com</div>
+      <div class="footer-contact-item"><span class="ic">📞</span> ۰۴۱-XXXXXXXX</div>
+      <form class="contact-form" id="contactForm" onsubmit="sendContactMessage(event)">
+        <input type="text" id="cfName" placeholder="نام شما" required>
+        <input type="text" id="cfContact" placeholder="ایمیل یا شماره تماس" required>
+        <textarea rows="3" id="cfMessage" placeholder="پیام شما" required></textarea>
+        <button type="submit">ارسال پیام ✉️</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    تهیه‌شده توسط گروه علوم تجربی استان آذربایجان شرقی — کلیه حقوق محفوظ است.
+  </div>
+</footer>
+
+<script>
+/* Auto-generated question data extracted from uploaded DOCX files. Edit freely. */
+
+/* ================= تنظیمات میزبانی تصاویر روی گیت‌هاب =================
+   تمام تصاویر سوالات از این آدرس به‌علاوه نام فایل خوانده می‌شوند.
+   یعنی مسیر واقعی هر عکس می‌شود: IMG_BASE_URL + نام فایل
+   کافیست فایل عکس را با همین نام داخل پوشه images/ ریپازیتوری TIMSS آپلود کنید؛
+   چیزی در کد نیازی به ویرایش ندارد. */
+const IMG_BASE_URL = "https://azarsam936-svg.github.io/TIMSS/images/";
+
+/* قالب نام‌گذاری عکس سوالات: n_b_p
+   n = پایه (7/8/9)      b = فصل (1 تا 15)      p = شماره سوال داخل همان فصل
+   مثال: 7_3_1.jpg  →  پایه هفتم، فصل ۳، سوال ۱ (سوال اصلی)
+   پسوندها:
+     _ans   → عکس داخل پاسخ و تحلیل سوال اصلی      مثال: 7_3_1_ans.jpg
+     _b     → عکس داخل سوال مشابه تألیفی            مثال: 7_3_1_b.jpg
+     _b_ans → عکس داخل پاسخ سوال مشابه تألیفی        مثال: 7_3_1_b_ans.jpg
+   اگر یک سوال بیش از یک عکس داشته باشد، به‌ترتیب _1 ، _2 و... اضافه می‌شود. */
+/* ================= بنرهای اختصاصی هر فصل =================
+   برای هر فصل که می‌خواهید بنر جداگانه داشته باشد، مقدار "" را با
+   یک رشته Base64 تصویر جایگزین کنید. مثال:
+   7: { 1: "data:image/jpeg;base64,/9j/4AAQ...", 2: "", ... }
+   اگر مقدار خالی بماند، بنر پیش‌فرض رنگی همان فصل نمایش داده می‌شود. */
+const CHAPTER_BANNERS = {
+  "7": {
+    "1": "",
+    "2": "",
+    "3": "",
+    "4": "",
+    "5": "",
+    "6": "",
+    "7": "",
+    "8": "",
+    "9": "",
+    "10": "",
+    "11": "",
+    "12": "",
+    "13": "",
+    "14": "",
+    "15": ""
+  },
+  "8": {
+    "1": "",
+    "2": "",
+    "3": "",
+    "4": "",
+    "5": "",
+    "6": "",
+    "7": "",
+    "8": "",
+    "9": "",
+    "10": "",
+    "11": "",
+    "12": "",
+    "13": "",
+    "14": "",
+    "15": ""
+  },
+  "9": {
+    "1": "",
+    "2": "",
+    "3": "",
+    "4": "",
+    "5": "",
+    "6": "",
+    "7": "",
+    "8": "",
+    "9": "",
+    "10": "",
+    "11": "",
+    "12": "",
+    "13": "",
+    "14": "",
+    "15": ""
+  }
+};
+
+/* ================= رسانه‌های بخش «معرفی TIMSS» =================
+   مقادیر زیر را با Base64 عکس/فیلم خود جایگزین کنید. */
+const INTRO_BANNER_IMAGE = ""; // بنر بالای صفحه معرفی TIMSS (data:image/jpeg;base64,...)
+const INTRO_IMAGE = "https://drive.google.com/uc?export=view&id=1oJ1hV7fhz8Zpl-yCx98SLnFo_k6-_u-b";        // تصویر توضیحی داخل کارت معرفی (data:image/jpeg;base64,...)
+const INTRO_VIDEO = "";        // فیلم معرفی (data:video/mp4;base64,...)
+
+const QUESTIONS = [
+  {
+    "id": 1,
+    "grade": 7,
+    "chapter": 1,
+    "domain": "",
+    "cognitive": "فهمیدن و بکاربستن",
+    "year": "",
+    "objective": "مهارت یادگیری در علوم تجربی",
+    "secretariat": "",
+    "level": 2,
+    "question": "محمدرضا قصد دارد با انجام آزمایشی سرعت تبخیر سه نوع مایع مختلف را با هم\nمقایسه کند . در کدام مورد روش انجام آزمایش او درست است و نتیجه آن قابل\nقبول تر است؟\n\n{{IMG}}",
+    "answer": "پاسخ: گزینه ب\nدر انجام یک آزمایش باید همه متغیر ها ثابت باشد به جز یک متغیر اصلی که\nقرار است مورد بررسی قرار گیرد . در شکل الف و ج هر سه ظرف یکی نیست . در\nشکل د دمای هر سه مایع یکی نیست ولی در شکل ب ظرفها ، دما مایع و مقدار\nمایع یکسان است و فقط نوع مایعات متفاوت است",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "7_1_1"
+  },
+  {
+    "id": 2,
+    "grade": 7,
+    "chapter": 1,
+    "domain": "",
+    "cognitive": "به یاد آوردن",
+    "year": "",
+    "objective": "مهارت یادگیری در علوم تجربی",
+    "secretariat": "",
+    "level": 1,
+    "question": "رضا با دست زدن به کتری آب متوجه سرد بودن آب کتری شد . رضا از کدام مهارت\nیادگیری در علوم تجربی استفاده کرده است ؟\nالف) اندازه گیری ب)پیش بینی ج) آزمایش د) مشاهده",
+    "answer": "پاسخ: گزینه د\nاستفاده از دست و حس لامسه نوعی مشاهده است .",
+    "similar": [],
+    "qnum": 2,
+    "imgbase": "7_1_2"
+  },
+  {
+    "id": 3,
+    "grade": 7,
+    "chapter": 2,
+    "domain": "",
+    "cognitive": "فهمیدن و بکاربستن",
+    "year": "",
+    "objective": "اندازه گیری/ کاربرد با ابزار",
+    "secretariat": "",
+    "level": 2,
+    "question": "در شکل روبرو قسمتی از یک استوانه مدرج را می بینید که درون آن جیوه ریخته\nایم. اگر واحد سنجش حجم در این استوانه مدرج سانتی مترمکعب (سی سی) باشد،\nمقدار جیوه درون استوانه را باید چه عددی گزارش کنیم؟\n\n{{IMG}}",
+    "answer": "پاسخ: 28 میلی لیتر با دقت اندازه گیری 2 میلی لیتر .",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "7_2_1"
+  },
+  {
+    "id": 4,
+    "grade": 7,
+    "chapter": 2,
+    "domain": "",
+    "cognitive": "تحلیل",
+    "year": "",
+    "objective": "شناخت مفهوم تفاوت وزن و جرم",
+    "secretariat": "",
+    "level": 2,
+    "question": "وزن یک نوزاد انسان در هنگام تولد به کدام گزینه نزدیکتر است؟\nالف) 3 کیلوگرم ب) 30 کیلوگرم ج) 3 نیوتون د) 30 نیوتون",
+    "answer": "پاسخ: گزینه د\nجرم یک نوزاد تقریبا 3 کیلوگرم است که وزن معادل 30نیوتون خواهد بود .",
+    "similar": [],
+    "qnum": 2,
+    "imgbase": "7_2_2"
+  },
+  {
+    "id": 5,
+    "grade": 7,
+    "chapter": 2,
+    "domain": "",
+    "cognitive": "فهمیدن و بکار بستن",
+    "year": "",
+    "objective": "اندازه گیری/کاربرد با ابزار",
+    "secretariat": "",
+    "level": 2,
+    "question": "با توجه به شکل روبرو به سوالات زیر پاسخ دهید.\nالف) آیا هر سه خط کش طول قطعه چوب را یک اندازه گزارش می کنند؟ چرا ؟\nب) در استفاده از خط کش برای اندازه گیری طول یک جسم چه نکاتی باید رعایت\nشود؟ 2مورد ذکر کنید\n\n{{IMG}}",
+    "answer": "پاسخ: الف) خیر – زیرا دقت اندازه گیری هر خط کش متفاوت است\nب)1.خط کش را در راستای جسم مستقیم بگیرد . -2 صفر خط کش را ابتدای جسم\nقرار دهد. -3 موقع خواندن عمود به محل خواندن نگاه کند. -4 به دقت اندازه\nگیری خط کش توجه کند. و یا هر نکته مناسب دیگر",
+    "similar": [],
+    "qnum": 3,
+    "imgbase": "7_2_3"
+  },
+  {
+    "id": 6,
+    "grade": 7,
+    "chapter": 2,
+    "domain": "",
+    "cognitive": "تحلیل",
+    "year": "",
+    "objective": "مفهوم چگالی",
+    "secretariat": "",
+    "level": 3,
+    "question": "مریم همواره برایش این سوال وجود داشت که چرا یک کشتی فولادی روی آب می\nماند در حالی که یک میخ فولادی کوچک در آب فرو می رود؟ به نظر شما پاسخ\nمناسب این سوال کدام است؟\nالف)نوع فولاد مورد استفاده در کشتی و میخ متفاوت است\nب) شوری زیاد آب دریا مانع فرو رفتن کشتی و باعث شناور شدن آن می شود\nج)با کم کردن حجم کشتی نسبت به جرم آن ، این اتفاق می افتد\nد) با افزایش حجم کشتی نسبت به جرم آن، این اتفاق می افتد",
+    "answer": "پاسخ:گزینه د\nبا توجه به رابطه چگالی (نسبت جرم به حجم) که چگالی با حجم رابطه عکس دارد\nپس کشتی را طوری می سازند که با افزایش حجم نسبت به جرم چگالی آن کمتر شده\nو کشتی روی آب شناور بماند. (نسبت جرم به حجم میخ فولادی بیشتر از کشتی\nاست.(",
+    "similar": [],
+    "qnum": 4,
+    "imgbase": "7_2_4"
+  },
+  {
+    "id": 7,
+    "grade": 7,
+    "chapter": 2,
+    "domain": "",
+    "cognitive": "فهمیدن و بکاربستن",
+    "year": "",
+    "objective": "اندازه گیری/ کاربرد با ابزار",
+    "secretariat": "",
+    "level": 2,
+    "question": "فاطمه با ترازویی که دقت اندازه گیری آن یک گرم است اگر بخواهد جسمی که جرم\nآن 33/0 گرم است اندازه بگیرد ترازو چه عددی را نشان می دهد؟",
+    "answer": "پاسخ: از آنجا که دقت اندازه گیری ترازوی مورد نظر یک گرم است یعنی کمتر از\nیک گرم را نمی تواند اندازه گیری کند پس ترازو جرم جسم را صفر نشان می دهد.",
+    "similar": [],
+    "qnum": 5,
+    "imgbase": "7_2_5"
+  },
+  {
+    "id": 8,
+    "grade": 7,
+    "chapter": 2,
+    "domain": "",
+    "cognitive": "فهمیدن و بکاربستن",
+    "year": "",
+    "objective": "اندازه گیری/ کاربرد با ابزار",
+    "secretariat": "",
+    "level": 2,
+    "question": "یکی از راههایی که نتیجه اندازه گیری و آزمایش را دقیق تر می کند تکرار\nآزمایش و اندازه گیری است . صدیقه وزن یک جسم را با نیروسنج های مختلف\nاندازه گرفت و مقادیر زیر را بدست آورد .\n8/2 نیوتون – 5/6نیوتون – 2/3 نیوتون – 7/3 نیوتون –3/2نیوتون(\nبر اساس اعداد داده شده وزن این جسم را چند نیوتون گزارش می کنید.\n. الف) 3 نیوتون ب)7/3نیوتون ج)0/3نیوتون د)4/2 نیوتون",
+    "answer": "پاسخ:گزینه ج\nبرای افزایش دقت در اندازه گیری باید ضمن تکرار اندازه گیری میانگین نیز\nگرفت .\nدر میانگین گرفتن اعدادی که غیرمربوط و نامتعارف است باید حذف نمود .در این\nاندازه گیری5/6 نیوتون نسبت به اعداد دیگر نامتعارف است و باید حذف شود.\nحال باجمع کردن اعداد 12نیوتون و تقسیم بر تعدادآنها 4عدد پاسخ 3 نیوتون می\nباشد .و چون دقت اندازه گیری ترازو یک دهم بوده است پس پاسخ صحیح 0/3نیوتون\nمی باشد.",
+    "similar": [],
+    "qnum": 6,
+    "imgbase": "7_2_6"
+  },
+  {
+    "id": 9,
+    "grade": 7,
+    "chapter": 2,
+    "domain": "",
+    "cognitive": "فهمیدن و تحلیل",
+    "year": "",
+    "objective": "مفهوم چگالی",
+    "secretariat": "",
+    "level": 3,
+    "question": "اگر مطابق شکل سه مایع \"الف\" ، \"ب \" و \" پ \" با جرم های مساوی را در سه ظرف\nمشابه داشته باشیم و تخم مرغی را داخل آن بیاندازیم چه اتفاقی می افتد؟\n\n{{IMG}}\n\nالف) اگر تخم مرغ در مایع \" پ \" فرو رود ، حتما در مایع الف و ب هم فرو می\nرود\nب) اگر تخم مرغ در مایع \" الف \" فرو رود ،در مایع ب فرو نمی رود ولی در\nمایع پ فرو می رود\nج) اگر تخم مرغ در مایع \" ب \" فرو رود ،حتما در مایع پ فرو می رود ولی در\nمایع الف فرو نمی رود\nد)اگر تخم مرغ در مایع \" ب \" فرو رود ، حتما در مایع پ فرو می رود و ممکن\nاست در مایع الف هم فرو رود.",
+    "answer": "پاسخ:الف\nبا توجه به اینکه جرم هر سه مایع برابر است و با توجه به حجم مایعات در سه\nظرف که حجم مایع ظرف الف بیشتر سپس حجم مایع ظرف ب و حجم مایع ظرف پ از همه\nکمتر است چگالی متفاوتی خواهند داشت. در جرم ثابت هر چه حجم بیشتر باشد\nچگالی کمتری دارد . پس چگالی مایع الف> چگالی مایع ب > چگالی مایع پ است.\nوقتی تخم مرغ در مایعی فرو می رود یعنی چگالی تخم مرغ از آن مایع بیشتر\nاست. چون چگالی تخم مرغ از مایع پ بیشتر است پس قطعا در دو مایع دیگر نیز\nفرو می رود.",
+    "similar": [],
+    "qnum": 7,
+    "imgbase": "7_2_7"
+  },
+  {
+    "id": 10,
+    "grade": 7,
+    "chapter": 2,
+    "domain": "",
+    "cognitive": "فهمیدن و تحلیل",
+    "year": "",
+    "objective": "مفهوم چگالی و مهارت نمودارخوانی",
+    "secretariat": "",
+    "level": 3,
+    "question": "نمودار زیر تغییرات حجم آب را نسبت به دما نشان می دهد. با توجه به نمودار\nچگالی آب خالص در چه دمایی بیشترین مقدار را دارد؟ چرا ؟\n\n{{IMG}}",
+    "answer": "پاسخ: در دمای 4 درجه سانتی گراد چون آب کمترین حجم را دارد بیشترین چگالی\nرا خواهد داشت چون جرم آب ثابت است و حجم با چگالی رابطه عکس دارد.",
+    "similar": [],
+    "qnum": 8,
+    "imgbase": "7_2_8"
+  },
+  {
+    "id": 11,
+    "grade": 7,
+    "chapter": 3,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "فرشته بادكنكي را باد كرده و آن را در آفتاب قرار ميدهد. او مشاهده ميكند\nحجم بادكنك افزايش مييابد. كدام شكل مقابل وضعيت مولكولهاي درون بادكنك را\nپس از قرار گرفتن در گرما درست نشان ميدهد؟\n\n{{IMG}}",
+    "answer": "پاسخ: گزینه1 افزايش دما باعث افزايش حجم ذرات و تعداد ذرات نميشود. بلكه\nفاصله بين ذرات را بيشتر ميكند. چون دما جنبش و حركت ذرات را بيشتر ميكند.",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "7_3_1"
+  },
+  {
+    "id": 12,
+    "grade": 7,
+    "chapter": 3,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "نمودار زير ميزان افزايش حجم هاي مساوي از چنـد مـاده را در اثـر\n\n{{IMG}}\nگـــرم كـــردن بـــه مقـــدار يكســـان نشـــان مـــيدهـــد .\nبراساس اطلاعات نمودار كدام گزينه درست است؟\n1 اگر ماده B آب باشد ماده A در آب ته نشن مي شود.\n2 اگر ماده C شیشه باشد ماده D آلومینیوم است.\n3 تراكم پذيري ماده B از ماده C كمتر است.\n4 چگالي ماده E از ماده A بيشتر است.",
+    "answer": "پاسخ:گزینه4\n1)ماده A نوعي گاز است كه گازها در آب تهنشين نميشوند.\n2)انبساط جامد فلزي (آلومينيوم) بيشتر از جامد نافلز (شيشه) است.\n3) افزايش حجم ماده B بيشترازماده C است و پس ماده B تراكم پذيري بيشتري\nدارد.\n4) ماده اي كه افزايش حجم كمتري دارد چگالي بيشتري دارد. چگالي ماده E\nازماده A بيشتر است",
+    "similar": [],
+    "qnum": 2,
+    "imgbase": "7_3_2"
+  },
+  {
+    "id": 13,
+    "grade": 7,
+    "chapter": 3,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "در يك كارخانه توليد گاز براي انتقال گاز، 10 ليتر از نوعي گاز را درون\nكپسولهـاي 5 ليتـري جـا مـيدهنـد.\nبراين اساس چه تغييري در مورد اين گاز نسبت به حالت اوليه روي ميدهد؟\n1 افزايش حجم\n2 كاهش چگالي\n3 افزايش جرم\n4 كاهش فاصله بين ذرات",
+    "answer": "پاسخ: گزینه 4 براي وارد كردن 10 ليتر گاز در يك ظرف 5 ليتري بايد آن را\nفشرده كرد كه براي اين كار فاصله ذرات گاز كاهش يافته و حجم گاز كاهش\nمييابد",
+    "similar": [],
+    "qnum": 3,
+    "imgbase": "7_3_3"
+  },
+  {
+    "id": 14,
+    "grade": 7,
+    "chapter": 4,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "محمدرضا در حال بازي كردن با يك فنر بود كه متوجه ويژگي جالبي در آن شد. با\nتوجه به شكل اين ويژگـي كداميك از موارد زير است؟\n\n{{IMG}}\n1 انعطافپذيري\n2 سختي\n3 استحكام\n4 رسانايي",
+    "answer": "پاسخ:گزینه 1\nتغييرشكل يك جسم( فنر) باوارد كردن نيروبه آن وبرگشتن به حالت اول جسم پس\nاز حذف نيروبيان كننده انعطاف پذيري جسم است. (فنر جسمي انعطافپذير است.)",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "7_4_1"
+  },
+  {
+    "id": 15,
+    "grade": 7,
+    "chapter": 4,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "در يك آزمايش، گروهي از دانش آموزان چهار ماده « چوب پنبه – جيوه – سكه\nبرنجي – آب » را با هم مخلـوط كرده و در يك ليوان ريختند. در اين شرايط بعد\nاز 5 دقيقه چه اتفاقي ميافتد؟\n1 چوب پنبه در آب فرو ميرود.\n2 سكه برنجي در زير جيوه و آب قرار ميگيرد.\n3 جيوه در پايين ترين قسمت و چوب پنبه شناور بر آب ميشود.\n4 جيوه روي آب قرار ميگيرد",
+    "answer": "پاسخ:گزینه 3\nبا توجه به تفاوت چگالي مواد ذكر شده، مواد از هم جدا شده و براساس چگالي\nاز بيشتر به كمتر روي هم قرار مـيگيرنـد. ترتيـب چگـالي مـواد بـه ايـن\nصورت است: جيوه > سكه برنجي > آب > چوب پنبه",
+    "similar": [],
+    "qnum": 2,
+    "imgbase": "7_4_2"
+  },
+  {
+    "id": 16,
+    "grade": 7,
+    "chapter": 4,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "آريا هنگام بازي كردن با توپ فوتبال خود متوجه شد كه مواد تشكيل دهنده توپ\nويژگيهـايي دارد كـه آن رابراي بازي فوتبال مناسب كرده است. بر اين اساس\nكدام ويژگي زير در ساخت توپ فوتبال اهميت ندارد؟\n1 آب گريز بودن\n2 انعطاف پذير بودن\n3 نارسانا بودن\n4 سبك بودن\n\n{{IMG}}",
+    "answer": "پاسخ:گزینه 3\nتوپ بايد سبك و انعطاف پذير باشد تا آسيب به كسي وارد نكند و با نيروي كم\nمنتقل شود. بدنه توپ بايد آبگريـز باشـد تـا آب را جـذب نكنـد كـه سنگين\nشود. بدنه توپ نارسانا است ولي اين نارسانايي كمكي به استفاده بهتر از توپ\nنميكند و نقشي ندارد. چون با گرما و برق سروكار ندارد.",
+    "similar": [],
+    "qnum": 3,
+    "imgbase": "7_4_3"
+  },
+  {
+    "id": 17,
+    "grade": 7,
+    "chapter": 4,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "{{IMG}}\nبا توجه به شكلهاي زير كه مراحل ساخت يك آلياژ را با دو ماده نشان ميدهد.\nاين آلياژكدام مورد ميتواند باشد؟\nالف) فولاد زنگ نزن\nب) چدن\nدليل شما براي اين انتخاب چيست؟",
+    "answer": "پاسخ: الف- چدن، ب- زيرا طبق شكل چدن از مخلوط دو عنصر (آهن و كربن) ساخته\nميشود ولي فولاد زنگ نزن از سه عنصر ساخته ميشود.",
+    "similar": [],
+    "qnum": 4,
+    "imgbase": "7_4_4"
+  },
+  {
+    "id": 18,
+    "grade": 7,
+    "chapter": 2,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "براي جداكردن مخلوط خاك اره و براده آهن يك ليوان آب در اختيار شما\nقرارداده ميشود.\nالف) براي جدا كردن اين دو ماده از يكديگر از تفاوت كدام ويژگي اين دو ماده\nاستفاده ميكنيد؟\nب) اين دو ماده را براساس ويژگي پيشنهادي خود با هم مقايسه كنيد.",
+    "answer": "پاسخ: الف- چگالي، ب- چگالي آهن از چوب بيشتر است (مخلوط را درآب ميريزيم\nآهن ته نشين ميشود و خاك اره روي آب شناورمي ماند وميتوان آنهارا ازهم\nجداكرد.",
+    "similar": [],
+    "qnum": 9,
+    "imgbase": "7_2_9"
+  },
+  {
+    "id": 19,
+    "grade": 7,
+    "chapter": 3,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "براي جداكردن مخلوط خاك اره و براده آهن يك ليوان آب در اختيار شما\nقرارداده ميشود.\nالف) براي جدا كردن اين دو ماده از يكديگر از تفاوت كدام ويژگي اين دو ماده\nاستفاده ميكنيد؟\nب) اين دو ماده را براساس ويژگي پيشنهادي خود با هم مقايسه كنيد.",
+    "answer": "پاسخ: الف- چگالي، ب- چگالي آهن از چوب بيشتر است (مخلوط را درآب ميريزيم\nآهن ته نشين ميشود و خاك اره روي آب شناورمي ماند وميتوان آنهارا ازهم\nجداكرد.",
+    "similar": [],
+    "qnum": 4,
+    "imgbase": "7_3_4"
+  },
+  {
+    "id": 20,
+    "grade": 7,
+    "chapter": 3,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "مواد زير مجموعهاي از مواد خالص ميباشند. شما آنها را در سه گروه عنصـر\nفلـزي، عنصـر نـافلزي و تركيـب طبقه بندي كنيد.\n«آهن- گاز كربن دي اكسيد- آب- گاز كلر- جيوه- گوگرد- گازنيتروژن- مس-\nآلومينيوم- گازمتان- كربن»",
+    "answer": "پاسخ:\n-----------------------------------------------------------------------\n  عنصر فلزي               عنصر نافلزي             تركيب\n  ----------------------- ----------------------- -----------------------\n  آهن جيوه مس آلومينيوم   گازكلر گوگرد گاز        آب گاز كربن دي اكسيد\n                          نيتروژن كربن            گازمتان\n-----------------------------------------------------------------------",
+    "similar": [],
+    "qnum": 5,
+    "imgbase": "7_3_5"
+  },
+  {
+    "id": 21,
+    "grade": 7,
+    "chapter": 4,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "{{IMG}}\nبا توجه به شكل زير، در هر يك از تغيير حالت هاي نشان داده شده بنويسيد\nكدام تغيير گرما ميگيـرد و كـدام تغيير گرما از دست ميدهد؟",
+    "answer": "پاسخ: در ذوب و تبخير جسم گرما ميگيرد و انرژي ذرات بيشتر شده و از هـم\nفاصـله\nميگيرند و در انجماد و ميعان جسم گرما از دست ميدهد و انرژي ذرات كمتـر\nشده و فاصله ذرات آنها كمتر ميگردد.",
+    "similar": [],
+    "qnum": 5,
+    "imgbase": "7_4_5"
+  },
+  {
+    "id": 22,
+    "grade": 7,
+    "chapter": 5,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "براي جداسازي اتم هاي اكسيژن ازآهن، سنگ معدن را با برخي مواد در كوره هاي\nمخصـوص حـرارت مـي\nدهند. در معادله نوشتاري زير مشخص كنيد هر يك از مواد A و B چه نوع مادهاي\nاست؟\nفلز آهن + B → A  + اكسيدهاي آهن\n1)هر دو ماده تركيب هستند. 2)هر دو ماده عنصر هستند.\n3) ماده A تركيب و ماده B عنصر است. 4)ماده A عنصر و ماده B تركيب است",
+    "answer": "پاسخ:گزینه 4 ماده A كربن كه يك عنصر است و ماده B كربن دي اكسيد تركيب\nميباشند.",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "7_5_1"
+  },
+  {
+    "id": 23,
+    "grade": 7,
+    "chapter": 7,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "شكل زير قسمتي از يك منطقه جغرافيايي را نشان ميدهد. در كدام منطقه عمق سطح\nايستابي كمتر است؟\n\n{{IMG}}\n\n1) منطقه1 2) منطقه 2\n3) منطقه3 4) منطقه4",
+    "answer": "پاسخ:گزینه 4هر چه منطقه اي به دريا نزديكتر باشد عمق سطح ايستابي كمتر\nاست.",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "7_7_1"
+  },
+  {
+    "id": 24,
+    "grade": 7,
+    "chapter": 8,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "در شكل زير قطعه چوبي را به فنري فشرده (شكل 1) سپس آن را رها ميكنيم چوب\nبه سمت راست رانده\nميشود. (شكل2) با توجه به شكلهاي داده شده كدام عبارت درست است؟\n\n{{IMG}}\n\n1 هر چه فنر بيشتر فشرده شده باشد، قطعه چوب مسافت بيشتري را (به سمت راست)\nطي خواهد كرد.\n2 هر چه فنر بيشتر فشرده شده باشد، قطعه چوب مسافت كمتري را (به سمت راست)\nطي خواهد كرد.\n3 انرژي پتانسيل شيميايي فنر باعث انجام كار بر روي قطعه چوب ميشود.\n4 در اين فعاليت انرژي پتانسيل گرانشي به انرژي پتانسيل كشساني تبديل\nميشود.",
+    "answer": "پاسخ:گزینه 1 فنر فشردهشده داراي انرژي پتانسيل كشساني ميباشد كه هر چه فنر\nبيشتر فشرده شود انرژي پتانسيل كشساني آن بيشتر شده و قطعه چوب را درمسافتي\nبيشتر ميتواند جابه جا كند.",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "7_8_1"
+  },
+  {
+    "id": 25,
+    "grade": 7,
+    "chapter": 7,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "{{IMG}}\nشكل زير قسمتي از وضعيت آب و هوايي يك منطقه را نشان ميدهد. كدام پديده\nدر شكل وجود ندارد؟\n1 حوضه آبريز 2 چرخه آب\n3 تشكيل غار آهكي 4 مسير باران پس از بارش",
+    "answer": "پاسخ: گزینه 3 در شكل نحوه تشكيل غارهاي آهكي و حل شدن سنگهاي آهكي كه منجر\nبه ايجاد فضاهاي خالي بين سنگها شود نشان داده نشده است.",
+    "similar": [],
+    "qnum": 2,
+    "imgbase": "7_7_2"
+  },
+  {
+    "id": 26,
+    "grade": 7,
+    "chapter": 7,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "شكل زير قسمتي از يك آبخوان را نشان ميدهد. كدام مورد درباره اين آبخوان\nدرست ميباشد؟\n\n{{IMG}}\n1 آبخوان تحت فشار- محل تشكيل قنات\n2 آبخوان آزاد- در دشتها و دامنه كوهها\n3 آبخوان تحت فشار- در نواحي كوهستاني و شيبدار\n4 آبخوان آزاد- محل تشكيل چشمه",
+    "answer": "پاسخ:گزینه 3 با وجود قرار گرفتن يك لايه نفوذپذير بين دو لايه نفوذناپذير\nآب خوان از نوع تحت فشار است كه در نواحي كوهستاني و شيبدار تشكيل ميشود.",
+    "similar": [],
+    "qnum": 3,
+    "imgbase": "7_7_3"
+  },
+  {
+    "id": 27,
+    "grade": 7,
+    "chapter": 7,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "جدول زير ويژگي و مقدار مواد معدني موجود در آب سه نوع رودخانه را در مناطق\nمختلـف كشـورمان بـه درصد بيان نموده است. براساس دادههاي جدول كدام جمله\nدرست است؟\n\n{{IMG}}\n\n1) آب رودخانه C اسيدي نيست.\n2 احتمال حل شدن آهك در آب رودخانه A وجود دارد.\n3 درصد املاح معدني موجود در رودخانه A از رودخانه C بيشتر است.\n4 احتمال اينكه آب رودخانه B نسبت به دو رودخانه ديگر از نوع آب سخت باشد\nبيشتر است.",
+    "answer": "پاسخ: گزینه 2حل شدن آهك در آب به آن خاصيت بازي ميدهد كه رنگ كاغذ pH را\nآبي ميكند.",
+    "similar": [],
+    "qnum": 4,
+    "imgbase": "7_7_4"
+  },
+  {
+    "id": 28,
+    "grade": 7,
+    "chapter": 5,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "جدول زير و مواد اوليه داده شده در هر ستون مشخص كنيـد از مخلـوط آنهـا در\nكارخانـه چـه\nمحصولي توليد ميشود؟ (نام محصول را بنويسيد)\n-----------------------------------------------------------------------\n  ماده اولیه        آهک-خاک رس        آب-سیمان-ماسه     ماسه- مواد\n                                                        شیمیایی\n  ----------------- ----------------- ----------------- -----------------\n  ماده تولیدی\n-----------------------------------------------------------------------",
+    "answer": "پاسخ:\n-----------------------------------------------------------------------\n  ماده اولیه        آهک-خاک رس        آب-سیمان-ماسه     ماسه- مواد\n                                                        شیمیایی\n  ----------------- ----------------- ----------------- -----------------\n  ماده تولیدی       سيمان             بتن               شيشه\n-----------------------------------------------------------------------",
+    "similar": [],
+    "qnum": 2,
+    "imgbase": "7_5_2"
+  },
+  {
+    "id": 29,
+    "grade": 7,
+    "chapter": 6,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "{{IMG}}\nنمودارهاي مقابل بخشي ازآب كره را نشان ميدهـد بـاتوجه به اهميت و نقش آب\nنمودارها را تفسير كنيد؟",
+    "answer": "پاسخ: با توجه به نمودار، بيشتر حجم آبكره در اقيانوسها و آب شور است پس\nميزان آب شور در سطح زمين بسيار زياد است(97 درصد) اما آب قابل اسـتفاده،آب\nشيرين است كه مقدار آن بسيار كم است و بيشتر آب شيرين در يخچالها و\nدرياچههاي آب شيرين است.(3درصد) (آب فراوان اما كمياب)",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "7_6_1"
+  },
+  {
+    "id": 30,
+    "grade": 7,
+    "chapter": 7,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "{{IMG}}\nمحمد در باغچـه خانـه خـود دو گلـدان A و B دارد كـه\nدرون آنها، خاكهاي متفاوت وجود دارد بهطوريكه آب\nاز گلدان B خيلي سريعتر از گلـدان A خـارج مـيشـود.\nويژگيهاي خاك اين دو گلدان را با هم مقايسه كنيد",
+    "answer": "پاسخ: اندازه ذرات خاك گلدان B بزرگتر و فضاي خالي بيشتري نسبت به ذرات خاك\nگلدان A دارد",
+    "similar": [],
+    "qnum": 5,
+    "imgbase": "7_7_5"
+  },
+  {
+    "id": 31,
+    "grade": 7,
+    "chapter": 8,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "در شكلهاي مقابل، تيراندازي بـه سـمت يـك هـدف در حال تيراندازي است. توضيح\nدهيد كه تبـديل انـرژي در شكل الف چه تفاوتي با شكل ب دارد؟\n\n{{IMG}}",
+    "answer": "پاسخ: در شكل الف انرژي پتانسيل كشساني به انرژي جنبشي تبديل ميشود ولي در\nشكل ب انرژي پتانسيل كشساني علاوه بر انرژي جنبشي به دليل افـزايش ارتفاع\nداراي انرژي پتانسيل گرانشي در حال افزايش نيز خواهد بود.",
+    "similar": [],
+    "qnum": 2,
+    "imgbase": "7_8_2"
+  },
+  {
+    "id": 32,
+    "grade": 7,
+    "chapter": 11,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "{{IMG}}\nشکل زیر یک نوع یاخته و اندامکهای درون آن یاخته را نشان\nمیدهد. با توجه به شکل داده شده کددا بادارد دربداره اید\nیاخته درست است؟\n1) شکل مربوط به یاختة بدن انسان میتواند باشد.\n2 )در این یاخته حتما دیواره یاخته ای و غشای یاخته ای وجود دارد.\n3 )در این یاخته دستگاه گلژی بزرگترین اندامک است.\n4 )در این شکل میتوکندری (راکیزه) مشاهده نمیشود.",
+    "answer": "پاسخ: گزینه 2 با توجه به شکل منظم و چند ضلعی آن یاخته از نوع گیاهی\nاست و یاخته گیاهی دیواره یاخته ای و غشای یاخته ای دارد.\nمیتوکندری در شکل وجود دارد و دستگاه گلژی مشترك بین یاخته\nجانوری و گیاهی است.",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "7_11_1"
+  },
+  {
+    "id": 33,
+    "grade": 7,
+    "chapter": 11,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "غشای یاخته ای در تمام یاخته ها ساختمان تقریبا یکسانی دارد .\n\n{{IMG}}\nبا توجه به ساختار غشای یاخته ای،کدام عبارت در مورد آن\nنادرست است؟\n1 )در ساختار غشا ترکیبات کربوهیدراتی نیز یافت میشود.\n2 )ساختار این غشا عمدتاً از لیپید(چربی) ساخته شده است.\n3 )در ساختار غشای یاخته ای پروتئین های متفاوت به کار رفته است.\n4) این غشا خاصیت نفوذپذیری انتخلابی دارد یعنی مواد را براساس\nاندازه انتقال میدهد.",
+    "answer": "پاسخ:گزینه 4 غشای یاخته ای براساس نفوذپذیری انتخابی به مواد بر اساس نیاز\nاجازه ورود و خروج میدهد. در ساختار آن از قند که واحلد سازنده\nآن گلوکز است استفاده شده است و باتوجه به شکل سه نوع پروتئین\nمتفاوت دارد و عمدتاً غشا یاخته از لیپید(چربی) ساخته شده است.",
+    "similar": [],
+    "qnum": 2,
+    "imgbase": "7_11_2"
+  },
+  {
+    "id": 34,
+    "grade": 7,
+    "chapter": 11,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "یاخته های مختلف بدن انسان با توجه به نوع کارشان دارای\nشکل های متفاوتی هستند که در زیر 4 نمونه از یاخته های\nمختلف بدن انسان آورده شده است. با توجه به شکل های داده\n\n{{IMG}}\nشده کدام عبارت توصیفی مناسبی از شکل موردنظر است؟\n1)ياخته شكل 3 براي انتقال مواد و حركت آسان در رگها مناسب است.\n2) براي ديواره مويرگ و تبادل مواد، شكل شماره 1 مناسب تر است.\n3 )ياخته شكل شماره 4 براي انتقال مواد در بدن مناسب تر است.\n4 )در ياخته هاي شكل شماره 2 تبادل مواد بهتر صورت ميگيرد.",
+    "answer": "پاسخ:گزینه 4 شکل 5 به دلیل فشرده و ضخیم بودن برای پوست و محافظت،\nشکل 2 به دلیل نازك بودن برای تبادل مواد در مویرگها و شکل 4\nبه دلیل دراز و کشیده بودن برای انتقال پیام عصبی مناسب است\nولی شکل 3 به دلیل گرد نبودن برای حرکت آسان مناسب نیست.",
+    "similar": [],
+    "qnum": 3,
+    "imgbase": "7_11_3"
+  },
+  {
+    "id": 35,
+    "grade": 7,
+    "chapter": 12,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "سارا دو نوع ويتامين C و ويتامين D را به مقداريكساني در دماهاي مختلف قرار\nداده و نتايج آزمايش را در جدول زير ثبت كرده است. بر اساس اين آزمايش و\nنتايج بدست آمده در جدول، كدام نتيجه گيري درمورد اين دو نوع ويتامين درست\nاست؟\n1 )دما بر ويتاميني كه براي سلامت پوست و لثه مناسب است تاثير كمتري دارد.\n2 )ويتاميني كه در بدن ذخيره مي شود به افزايش دما بيشتر حساس است.\n3 )ويتاميني كه به طور عمده در تخم مرغ وجود دارد بـه افـزايش دمـا حساسـيت\nكمتري دارد.\n4) بدن انسان ميتواند ويتاميني كه بيشتر تحت تاثير دما قرارگرفته را با\nاستفاده از\n\n{{IMG}}\nنور آفتاب بسازد.",
+    "answer": "پاسخ:گزینه 3 با توجه به داده های جدول نتایج ویتامین C بیشتر از ویتامین\nDتحت تا یر دما از بین میرود. ویتامین C برای سلامت پوست و لثه مفید است و\nویتامین D عمدتا در تخم مرغ بیشتر بوده و با تابش نور خورشید بر پوست در\nبدن تولید می گردد و چون محلول درچربی است در بدن ذخیره میشود.",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "7_12_1"
+  },
+  {
+    "id": 36,
+    "grade": 7,
+    "chapter": 12,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "در جدول مقابل چهارنمونه رژيم غذايي براي صبحانه يك نوجوان سالم آورده شده\nاست. كدام رژيم غذايي، نشان دهنده يك تغذيه سالم تر و مفيدتر است؟\n\n{{IMG}}\n1 )رژيم غذايي A\n2) رژيم غذايي B\n3 )رژيم غذايي C\n4 )رژيم غذايي D",
+    "answer": "پاسخ: گزینه2 در بین چهار گروه مواد غذایی موجود در جدول مورد B همه 6گروه\nمواد مغذی را برای بدن تامین میکند. در گروه A وجود کره ومربا در گروه C\nوجود کیک و خامه و در گروه D وجود چای کره و\nمربا در مقایسه با مواد غذایی گروه B سلامتی کمتری برای بدن به همراه دارد.",
+    "similar": [],
+    "qnum": 2,
+    "imgbase": "7_12_2"
+  },
+  {
+    "id": 37,
+    "grade": 7,
+    "chapter": 13,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "{{IMG}}\nجانورشناسي دريك حفاري علمي، فسيل جمجمه يك نوع جانوررا كشف كرد. با توجه\nبه شكل زير رژيم غذايي اين جانور چه بوده است؟\n1 )گياهخوار\n2) گوشتخوار\n3) همه چيزخوار\n4 )چون كل ساختار بدن او مشخص نيست، نميتوان دقيق نظر داد.\n(نكته: همه چيز خوار يعني جانداري كه هم گياهخوار و هم گوشتخوار است.",
+    "answer": "پاسخ:گزینه 2 با توجه به شکل دندان ها که همگی نوك تیز هستند و از نوع\nدندان نیش عمل میکنند برای پاره کلردن گوشت مناسب بوده و\nمیتوان نتیجه گرفت جانور گوشتخوار بوده است.\n\n{{IMG}}\nشكل زير لوله گوارش در كرم خاكي و گنجشك را نشان ميدهد. كدام مورد،\nمقايسه درسـتي از لولـه گـوارش كـرم خـاكي بـا پرنـده اي ماننـدگنجشك است؟\n\n{{IMG}}\n\n1 )در گنجشك مانند كرم خاكي معده وجود ندارد.\n2)در گنجشك برخلاف كرم خاكي چينه دان قبل از مري قرار دارد.\n3 )در كرم خاكي و گنجشك چينهدان و سنگدان پشت سر هم قرار دارند.\n4 )در گنجشك برخلاف كرم خاكي مواد غذايي مستقيما از چينه دان وارد سنگدان\nنميشود.\nپاسخ: گزینه4 با توجه به شکل کتاب درسی ساختار لوله گوارش در گنجشک\nبه ترتیب: مری چینه دان معده سنگدان و روده می باشد که با\nمقایسه با لوله گوارش کرم خاکی متوجه می شویم در کرم خاکی\nبرخلاف گنجشک معده وجود ندارد و چینهددان و سنگدان پشت سرهم قرار دارند.",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "7_13_1"
+  },
+  {
+    "id": 38,
+    "grade": 7,
+    "chapter": 13,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "شكل زير قسمتي از دستگاه گوارش انسان را نشان مي دهد. كدام عبارت توصيف\nدرستي ازقسمت مشخص شده نيست؟\n1 )در بخش A محيط به شدت اسيدي بوده كه به گوارش غذا كمك ميكند.\n2 )در بخش D موادي براي كمك به هضم چربي هاي موجود در غذا ساخته و ترشح\nميشود.\n3 )در بخش B آب و مواد معدني اضافي جذب ميشود تا بدن با مشكل كم آبي و مواد\nمعدني روبه رو نشود.\n\n{{IMG}}\n4 )در بخش C باكتري هايي درحال تغذيه از سلولز و ساختن ويتامین K و برخي\nويتامين هاي گروه B هستند.",
+    "answer": "پاسخ: گزینه 4بخش A معده است که در شیره گوارشی آن اسید وجود دارد .\nبخش B فراخ روده است که وظیفله آن جذب آب و مواد معدنی اضافی همراه مواد\nغذایی و جذب ویتامین B و K تولید شده توسط\nباکتری های موجود در فراخ روده است. بخش C باریک روده است که محل گوارش\nنهایی مواد غذایی و جذب مواد مغذی است. بخشD کبد است که صفرا را برای هضم\nچربیها تولید و ترشح میکند.",
+    "similar": [],
+    "qnum": 2,
+    "imgbase": "7_13_2"
+  },
+  {
+    "id": 39,
+    "grade": 7,
+    "chapter": 14,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "شكل مقابل ساختار داخلي قلب و رگهاي متصل به آن را نشان ميدهد. با توجـه\nبـه شـكل\nداده شده كدام عبارت توصيف درستي ازوضعيت ساختاري قلب است؟\n1 )رگهاي شماره 4 خون را از قلب به ششها منتقل ميكنند.\n2) در موقع انقباض دهليزها دريچه شماره 5 بسته است .\n3) فشار خون در رگ شماره 7 بيشتر از، رگ شماره 12 است .\n4قسمت هاي شماره 1 تا 7 همگي خون روشن و شماره 8 تا 12 همگي خون تيره\nدارند.\n\n{{IMG}}",
+    "answer": "پاسخ: گزینه3 رگهای شماره 4 سیاهرگهای ششی بوده که از شش خون تصفیه شده را\nبه دهلیز چپ قلب می آورند - در موقع انقباض\nدهلیزها دریچه های دولختی و سه لختی باز بوده تا خون را به بطن هامنتقل\nکنند. - رگ شماره 7 چون انشعابی از سرخرگ آئورت بوده\nفشار خون در آن خیلی بیشتر از فشار خون در رگ شلماره 12 که\nبزرگ سیاهرگ زیرین است و فشارخون در سیاهرگ ها کمتر از\nسرخرگها است. - شماره 2 سرخرگ های ششی دارای خون تیره و\nشماره 10 سیاهرگ های ششی دارای خون روشن میباشد.",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "7_14_1"
+  },
+  {
+    "id": 40,
+    "grade": 7,
+    "chapter": 14,
+    "domain": "",
+    "cognitive": "",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "جدول زير نتايج آزمايش خون سه مراجعه كننده به آزمايشگاه است. با توجه\nنتايج موجود در جدول كدام نتيجه گيري ازاين نتايج درست است؟\n1 )هر سه مراجعه كننده سالم بوده و بيماري خاصي ندارند .\n2) افشين به دليل كم بودن مقدار آهن خونش به نوعي كم خوني مبتلا است.\n3 )اگر از دست هر سه نفر در اثر بريدگي (مشابه) خون بيايد، خون ريزي دست\nاميرعلي كمتر است.\n4) پيمان به نوعي بيماري ميكروبي مبتلا شده و بدنش در حال دفاع در برابر\nميكروبها است\n\n{{IMG}}",
+    "answer": "پاسخ: گزینه4 با بررسی جدول نتایج آزمایش خون سه فرد : پلاکت خون\nامیرعلی از حد طبیعی کمتر است و در صورت خونریزی انعقاد خون\nدر او به درستی صورت نمی گیرد و خون بیشتری از او به هدرمیرود.\n- نتایج خون افشین بیانگر سلامتی او بوده و مشکلی ندارد. -\nبالا بودن تعداد یاخته های سفید پیمان نشانه وجود بیماری میکروبی\nدر بدن او میباشد. زیرا بدن برای مبارزه با میکروب ها یاختله های\nسفید خود را افزایش میدهد. دفای از بدن در برابر عامل های بیگانه\nمثل میکروب ها به عهده یاخته های سفید است.",
+    "similar": [],
+    "qnum": 2,
+    "imgbase": "7_14_2"
+  },
+  {
+    "id": 41,
+    "grade": 8,
+    "chapter": 1,
+    "domain": "شیمی",
+    "cognitive": "استدلال و تحلیل",
+    "year": "2003",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "ترزا مخلوطی شامل نمک، شن، براده‌های آهن و قطعات کوچک چوب‌پنبه\nدارد. او برای جداسازی مخلوط، چهار مرحله زیر را انجام می‌دهد:\nبا آهن‌ربا یکی از اجزا را جدا می‌کند.\nبه مواد باقی‌مانده آب اضافه می‌کند و ماده‌ای را که روی آب شناور می‌شود،\nبرمی‌دارد.\nمخلوط باقی‌مانده را صاف می‌کند.\nآب باقی‌مانده را تبخیر می‌کند.\nاگر اجزا به ترتیب با حروفZ,Y,x,w مشخص شده باشند، مشخص کنید هر حرف مربوط\nبه کدام ماده است.\nW = ؟\nX = ؟\nY = ؟\nZ =؟",
+    "answer": "پاسخ:\nW = آهنX = چوب‌پنبه Y = شن Z =نمک\nتحلیل:دانش‌آموز باید چند ویژگی فیزیکی مواد را پشت‌سرهم به کار ببرد؛ پس\nسؤال فقط حفظ روش‌های جداسازی نیست و به درک و دنبال‌کردن یک فرایند\nچندمرحله‌ای نیاز دارد.",
+    "similar": [
+      {
+        "question": "مخلوطی از براده آهن، ماسه، نمک و خاک‌اره در اختیار دانش‌آموزی قرار دارد.\nاو می‌خواهد هر چهار ماده را جداگانه به دست آورد.\nکدام ترتیب، مناسب‌ترین روش برای جداسازی کامل این مخلوط است؟\nالف) آهن‌ربا ← افزودن آب و برداشتن خاک‌اره ← صاف کردن ← تبخیر آب\nب) صاف کردن ← آهن‌ربا ← تبخیر آب ← افزودن آب\nج) تبخیر آب ← صاف کردن ← آهن‌ربا ← افزودن آب\nد) افزودن آب ← تبخیر آب ← آهن‌ربا ← صاف کردن",
+        "answer": "پاسخ: گزینه الف\nتحلیل:\nابتدا آهن با آهن‌ربا جدا می‌شود. سپس خاک‌اره که روی آب شناور می‌شود جدا\nمی‌گردد. ماسه با صاف کردن از آب و نمک جدا می‌شود و در پایان با تبخیر آب،\nنمک باقی می‌ماند."
+      }
+    ],
+    "qnum": 1,
+    "imgbase": "8_1_1"
+  },
+  {
+    "id": 42,
+    "grade": 8,
+    "chapter": 1,
+    "domain": "شیمی",
+    "cognitive": "کاربرد",
+    "year": "۲۰۱۱",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "جدول زیر چند ماده را نشان می‌دهد. مشخص کنید هرکدام عنصر، ترکیب یا مخلوط\nهستند:\n-------------------------------------------------------------------------\n  مخلوط            ترکیب          عنصر                   ماده\n  ---------------- -------------- ---------------------- ------------------\n  \n{{IMG}}\n               \n{{IMG}}\n                                    هوا\n\n{{IMG}}\n               \n{{IMG}}\n             \n{{IMG}}\n                     شکر\n\n{{IMG}}\n               \n{{IMG}}\n             \n{{IMG}}\n                     نمک\n\n{{IMG}}\n               \n{{IMG}}\n             \n{{IMG}}\n                     طلا\n\n{{IMG}}\n               \n{{IMG}}\n             \n{{IMG}}\n                     آب دریا\n\n{{IMG}}\n               \n{{IMG}}\n             \n{{IMG}}\n                     هلیم\n  -------------------------------------------------------------------------",
+    "answer": "پاسخ:\n-------------------------------------------------------------------------\n  مخلوط            ترکیب          عنصر                   ماده\n  ---------------- -------------- ---------------------- ------------------\n  \n{{IMG}}\n               \n{{IMG}}\n                                    هوا\n\n{{IMG}}\n               \n{{IMG}}\n             \n{{IMG}}\n                     شکر\n\n{{IMG}}\n               \n{{IMG}}\n             \n{{IMG}}\n                     نمک\n\n{{IMG}}\n               \n{{IMG}}\n             \n{{IMG}}\n                     طلا\n\n{{IMG}}\n               \n{{IMG}}\n             \n{{IMG}}\n                     آب دریا\n\n{{IMG}}\n               \n{{IMG}}\n             \n{{IMG}}\n                     هلیم\n  -------------------------------------------------------------------------\nتحلیل کوتاه:\nعنصر فقط یک نوع اتم دارد؛ ترکیب از چند عنصر با نسبت مشخص ساخته شده و\nمخلوط شامل چند ماده است.",
+    "similar": [
+      {
+        "question": "کدام گزینه به‌ترتیب شامل عنصر، ترکیب و مخلوط است؟\nالف) آهن ـ آب ـ هوا\nب) آب ـ آهن ـ اکسیژن\nج) هوا ـ نمک ـ طلا\nد) طلا ـ هوا ـ آب",
+        "answer": "پاسخ: الف\nتحلیل: آهن عنصر، آب ترکیب و هوا مخلوط است."
+      }
+    ],
+    "qnum": 2,
+    "imgbase": "8_1_2"
+  },
+  {
+    "id": 43,
+    "grade": 8,
+    "chapter": 1,
+    "domain": "شیمی",
+    "cognitive": "کاربرد",
+    "year": "1999",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "با وسیله‌ای که برای صاف کردن (فیلتراسیون) استفاده می‌شود، کدام مخلوط را\nمی‌توان جدا کرد؟\nالف) نمک و فلفل\nب) فلفل و آب\nج) اکسیژن و آب\nد) محلول نیترات نقره در آب\nهـ) محلول شکر در آب",
+    "answer": "پاسخ: ب\nتحلیل: فلفل در آب حل نمی‌شود و می‌توان آن را با صافی جدا کرد.",
+    "similar": [
+      {
+        "question": "کدام مخلوط را می‌توان با صافی جدا کرد؟\nالف) نمک و آب\nب) شکر و آب\nج) شن و آب\nد) الکل و آب",
+        "answer": "پاسخ: ج\nتحلیل: شن در آب حل نمی‌شود و ذرات آن توسط صافی جدا می‌شوند."
+      }
+    ],
+    "qnum": 3,
+    "imgbase": "8_1_3"
+  },
+  {
+    "id": 44,
+    "grade": 8,
+    "chapter": 1,
+    "domain": "شیمی",
+    "cognitive": "کاربرد",
+    "year": "2003",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "فرض کنید مقدار زیادی آب دریا در اختیار دارید. چگونه می‌توانید از آن آب\nآشامیدنی به دست آورید؟\nپاسخ خود را توضیح دهید.",
+    "answer": "پاسخ:\nآب دریا را حرارت می‌دهیم تا آب بخار شود؛ سپس بخار آب را سرد می‌کنیم تا\nدوباره به آب تبدیل شود و آن را جمع‌آوری می‌کنیم.\nتحلیل کوتاه:\nاین روش تقطیر است؛ نمک باقی می‌ماند و آب خالص جمع می‌شود.",
+    "similar": [
+      {
+        "question": "یک گروه دانش‌آموزی برای بررسی آب یک رودخانه، نمونه‌ای از آن را به\nآزمایشگاه می‌برد. آن‌ها متوجه می‌شوند نمونه شامل ذرات گل‌ولای، شن ریز و\nمقداری نمک حل‌شده است.\nآن‌ها می‌خواهند از این نمونه، آب نسبتاً خالص به دست آورند. کدام روش مناسب‌تر\nاست؟\nدانش‌آموزان چهار روش زیر را پیشنهاد می‌کنند:\nA) صاف کردن تبخیر\nB) تبخیر صاف کردن\nC)صاف کردن تقطیر\nD) آهن‌ربا صاف کردن",
+        "answer": "پاسخ:گزینه C\nبا صاف کردن، گل‌ولای و شنِ حل‌نشده از آب جدا می‌شوند.\nسپس با تقطیر، اب نسبتا خالص بدست می اوریم.\nتحلیل: چون اگر هدف به‌دست‌آوردن آب باشد، تبخیر به‌تنهایی مناسب نیست؛ آب را\nاز دست می‌دهیم. در تقطیر، آب تبخیر و سپس جمع‌آوری می‌شود."
+      }
+    ],
+    "qnum": 4,
+    "imgbase": "8_1_4"
+  },
+  {
+    "id": 45,
+    "grade": 8,
+    "chapter": 1,
+    "domain": "شیمی",
+    "cognitive": "تحلیل",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "بهرام، آزمایشی را به منظور بررسی اثر دما بر میزان حل‌شدن شکر در آب انجام\nداد. او مقداری شکری که در دماهای مختلف در یک لیتر آب حل می‌شود را اندازه\nگرفت. او سپس نتایج کار خود را رسم کرد: کدام نمودار نتایج کار بهرام را\nبهتر نشان می‌دهد؟",
+    "answer": "پاسخ:گزینه ج\n\n{{IMG}}",
+    "similar": [],
+    "qnum": 5,
+    "imgbase": "8_1_5"
+  },
+  {
+    "id": 46,
+    "grade": 8,
+    "chapter": 2,
+    "domain": "شیمی",
+    "cognitive": "درک مفهوم",
+    "year": "۲۰۰۳",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "چرا باد زدن یک آتش چوبی می‌تواند باعث شود آتش داغ‌تر بسوزد؟\nالف) چوب را به اندازه کافی گرم می‌کند تا بسوزد.\nب) اکسیژن بیشتری را که برای سوختن لازم است فراهم می‌کند.\nج) مقدار چوبی را که برای سوختن وجود دارد افزایش می‌دهد.\nد) انرژی لازم برای ادامه آتش را فراهم می‌کند.",
+    "answer": "پاسخ: ب\nتحلیل کوتاه: باد زدن باعث رسیدن اکسیژن بیشتری به آتش می‌شود.",
+    "similar": [
+      {
+        "question": "در یک اردو، دو گروه مقدار مساوی هیزم را آتش می‌زنند. گروه اول هیزم‌ها را\nبدون جابه‌جایی رها می‌کند، اما گروه دوم هر چند دقیقه با یک بادبزن هوا را\nبه سمت آتش هدایت می‌کند.\nاگر مقدار هیزم و شرایط محیطی یکسان باشد، کدام مشاهده بهترین توضیح را\nبرای تفاوت شدت آتش ارائه می‌دهد؟\nالف) گروه دوم انرژی بیشتری به هیزم داده است.\nب) حرکت هوا باعث شده اکسیژن بیشتری به محل سوختن برسد.\nج) بادبزن باعث شده جرم هیزم افزایش یابد.\nد) حرکت هوا باعث تبدیل هیزم به ماده‌ای با نقطه ذوب کمتر شده است.",
+        "answer": "پاسخ: ب\nتحلیل: افزایش دسترسی به اکسیژن می‌تواند سوختن را سریع‌تر و شدیدتر کند"
+      },
+      {
+        "question": "یک دانش‌آموز برای خاموش کردن آتش، ابتدا روی آن آب می‌ریزد و آتش خاموش\nمی‌شود. دوستش می‌گوید:\n«پس آب حتماً اکسیژن را از بین برده است.»\nکدام پاسخ علمی‌تر است؟\nالف) آب اکسیژن را به ماده دیگری تبدیل می‌کند.\nب) آب می‌تواند دمای مواد را کاهش دهد و شرایط لازم برای ادامه سوختن را از\nبین ببرد.\nج) آب باعث افزایش اکسیژن اطراف آتش می‌شود.\nد) آب، ماده سوختنی را به اکسیژن تبدیل می‌کند.",
+        "answer": "پاسخ: ب تحلیل: کاهش دما یکی از راه‌های متوقف کردن احتراق است."
+      }
+    ],
+    "qnum": 1,
+    "imgbase": "8_2_1"
+  },
+  {
+    "id": 47,
+    "grade": 8,
+    "chapter": 2,
+    "domain": "شیمی",
+    "cognitive": "درک مفهومی",
+    "year": "۲۰۰۳",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "برخی واکنش‌های شیمیایی انرژی جذب می‌کنند و برخی انرژی آزاد می‌کنند. از میان\nواکنش‌های سوختن زغال‌سنگ و منفجر شدن مواد آتش‌بازی، کدام واکنش انرژی آزاد\nمی‌کند؟\nالف) فقط سوختن زغال‌سنگ\nب) فقط منفجر شدن مواد آتش‌بازی\nج) هر دو\nد) هیچ‌کدام",
+    "answer": "پاسخ: ج",
+    "similar": [
+      {
+        "question": "در یک اردو، دانش‌آموزان یک بسته گرم‌کننده دست را فعال می‌کنند. پس از مخلوط\nشدن دو ماده داخل بسته، دمای سطح آن از ۲۲°C به ۳۸°C می‌رسد. بسته در تماس\nبا منبع گرمایی دیگری نیست.\nیکی از دانش‌آموزان می‌گوید:\n«چون دمای بسته افزایش یافته، حتماً گرما از محیط وارد بسته شده است.»\nکدام گزینه بهترین ارزیابی از این گفته است؟\nالف) درست است؛ هر افزایش دما فقط در اثر دریافت گرما از محیط اتفاق\nمی‌افتد.\nب) نادرست است؛ واکنش شیمیایی می‌تواند انرژی را آزاد کند و باعث افزایش\nدمای بسته شود.\nج) درست است؛ واکنش‌های شیمیایی همیشه انرژی را از محیط جذب می‌کنند.\nد) نادرست است؛ افزایش دما نشان می‌دهد ماده اولیه کاملاً از بین رفته است.",
+        "answer": "پاسخ: ب\nتحلیل کوتاه: افزایش دما بدون دریافت گرمای خارجی می‌تواند نشان‌دهنده آزاد\nشدن انرژی در واکنش شیمیایی باشد."
+      }
+    ],
+    "qnum": 2,
+    "imgbase": "8_2_2"
+  },
+  {
+    "id": 48,
+    "grade": 8,
+    "chapter": 2,
+    "domain": "شیمی",
+    "cognitive": "درک مفهومی",
+    "year": "۲۰۰۳",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "کدام مورد یک تغییر شیمیایی است؟\nالف) عنصر ۱ صیقل داده می‌شود تا سطحی صاف پیدا کند.\nب) عنصر ۲ گرم می‌شود و تبخیر می‌شود.\nج) عنصر ۳ پس از ماندن در هوا، سطحی سفید و پودری پیدا می‌کند.\nد) عنصر ۴ با صاف کردن از یک مخلوط جدا می‌شود.",
+    "answer": "پاسخ: ج",
+    "similar": [
+      {
+        "question": "سه دانش‌آموز درباره یک آزمایش اختلاف نظر دارند.\nدر آزمایش، یک فلز پس از چند روز در معرض هوا قرار می‌گیرد و سطح آن به\nماده‌ای با رنگ و ویژگی متفاوت تبدیل می‌شود.\nکدام مشاهده بیشترین دلیل را برای وقوع تغییر شیمیایی فراهم می‌کند؟\nالف) شکل قطعه فلز تغییر کرده است.\nب) اندازه قطعه کمی تغییر کرده است.\nج) ماده‌ای با ویژگی‌های جدید روی سطح تشکیل شده است.\nد) فلز برای چند روز در آزمایشگاه باقی مانده است.",
+        "answer": "پاسخ: ج"
+      }
+    ],
+    "qnum": 3,
+    "imgbase": "8_2_3"
+  },
+  {
+    "id": 49,
+    "grade": 8,
+    "chapter": 2,
+    "domain": "شیمی",
+    "cognitive": "درک مفهومی",
+    "year": "۲۰11",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "احمد مقداری پودر را در لوله آزمایش می‌ریزد، مایعی به آن اضافه می‌کند و\nلوله را تکان می‌دهد. یک واکنش شیمیایی رخ می‌دهد.\nاز دانش‌آموز خواسته می‌شود:\nدو چیزی را که ممکن است هنگام واکنش مشاهده کند، بیان کنید.\nراهنمای رسمی مواردی مثل تغییر رنگ، تولید گاز، صدا، تغییر دما، تشکیل رسوب\nو تولید نور را می‌پذیرد",
+    "answer": "پاسخ و تحلیل برای این سوال ثبت نشده است.",
+    "similar": [
+      {
+        "question": "در واکنشی، دمای ظرف از ۲۲ به ۳۱ درجه می‌رسد، حباب تشکیل می‌شود و رنگ مخلوط\nتغییر می‌کند.\nکدام گزینه قوی‌ترین نتیجه‌گیری را ارائه می‌دهد؟\nالف) فقط ماده اولیه حل شده است.\nب) فقط یک تغییر حالت رخ داده است.\nج) چند شاهد از وقوع یک واکنش شیمیایی وجود دارد.\nد) چون جرم اندازه‌گیری نشده، هیچ نتیجه‌ای ممکن نیست.",
+        "answer": "پاسخ: ج\nتحلیل: وجود چند نشانه متفاوت، احتمال تشکیل مواد جدید را تقویت می‌کند."
+      }
+    ],
+    "qnum": 4,
+    "imgbase": "8_2_4"
+  },
+  {
+    "id": 50,
+    "grade": 8,
+    "chapter": 2,
+    "domain": "شیمی",
+    "cognitive": "دانستن",
+    "year": "2011",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "در کدام فرایند شیمیایی انرژی جذب می‌شود؟\nالف) زنگ زدن میخ‌های آهنی\nب) سوختن شمع‌ها\nج) پوسیدن سبزیجات\nد) فتوسنتز گیاهان",
+    "answer": "پاسخ: د",
+    "similar": [],
+    "qnum": 5,
+    "imgbase": "8_2_5"
+  },
+  {
+    "id": 51,
+    "grade": 8,
+    "chapter": 2,
+    "domain": "شیمی",
+    "cognitive": "دانستن",
+    "year": "ک2011",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "چرا می‌توان یک آتش کوچک را با قرار دادن یک پتوی ضخیم روی آن خاموش کرد؟\nالف) دما را کاهش می‌دهد.\nب) شعله‌ها را کوچک‌تر می‌کند.\nج) ماده در حال سوختن را جذب می‌کند.\nد) مانع رسیدن اکسیژن به آتش می‌شود.",
+    "answer": "پاسخ: د",
+    "similar": [
+      {
+        "question": "در آزمایشگاه، شعله کوچکی ایجاد شده است. دانش‌آموزی به جای ریختن آب، درِ\nمناسب ظرف را روی آن قرار می‌دهد و شعله خاموش می‌شود.\nکدام عامل مستقیماً باعث خاموش شدن شعله شده است؟\nالف) کاهش دسترسی به اکسیژن\nب) افزایش مقدار سوخت\nج) افزایش دمای محیط\nد) افزایش سطح تماس سوخت با هوا",
+        "answer": "پاسخ: الف"
+      }
+    ],
+    "qnum": 6,
+    "imgbase": "8_2_6"
+  },
+  {
+    "id": 52,
+    "grade": 8,
+    "chapter": 3,
+    "domain": "شیمی ـ ساختار ماده",
+    "cognitive": "کاربرد",
+    "year": "۱۹۹۹",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "اگر تمام اتم‌های یک جسم از آن خارج شوند، چه چیزی از جسم باقی می‌ماند؟",
+    "answer": "پاسخ: چیزی باقی نمی‌ماند.\nتحلیل کوتاه: همه مواد از اتم تشکیل شده‌اند",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "8_3_1"
+  },
+  {
+    "id": 53,
+    "grade": 8,
+    "chapter": 3,
+    "domain": "شیمی ـ ساختار ذره‌ای ماده",
+    "cognitive": "دانستن",
+    "year": "۲۰۰۳",
+    "objective": "",
+    "secretariat": "",
+    "level": 1,
+    "question": "هسته بیشتر اتم‌ها از چه ذراتی تشکیل شده است؟\nالف) فقط نوترون‌ها\nب) پروتون‌ها و نوترون‌ها\nج) پروتون‌ها و الکترون‌ها\nد) نوترون‌ها و الکترون‌ها",
+    "answer": "پاسخ: ب\nتحلیل کوتاه: هسته شامل پروتون و نوترون است.",
+    "similar": [],
+    "qnum": 2,
+    "imgbase": "8_3_2"
+  },
+  {
+    "id": 54,
+    "grade": 8,
+    "chapter": 3,
+    "domain": "شیمی ـ ساختار ذره‌ای ماده",
+    "cognitive": "درک مفهومی",
+    "year": "",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "اگر تمام اتم‌های یک صندلی را از آن خارج کنیم، چه چیزی باقی می‌ماند؟\nالف) صندلی همچنان وجود خواهد داشت، ولی وزن آن کمتر می‌شود.\nب) صندلی دقیقاً مانند قبل باقی می‌ماند.\nج) چیزی از صندلی باقی نمی‌ماند.\nد) فقط یک حوضچه مایع روی زمین باقی می‌ماند.",
+    "answer": "پاسخ: ج\nتحلیل کوتاه: بدون اتم، ماده‌ای از صندلی باقی نمی‌ماند.",
+    "similar": [],
+    "qnum": 3,
+    "imgbase": "8_3_3"
+  },
+  {
+    "id": 55,
+    "grade": 8,
+    "chapter": 3,
+    "domain": "شیمی ـ ساختار اتم و یون",
+    "cognitive": "دانستن",
+    "year": "۲۰۰۳",
+    "objective": "",
+    "secretariat": "",
+    "level": 1,
+    "question": "اگر یک اتم خنثی یک الکترون به دست آورد، چه چیزی تشکیل می‌شود؟\nالف) مخلوط\nب) یون\nج) مولکول\nد) فلز",
+    "answer": "پاسخ: ب\nتحلیل کوتاه: با گرفتن الکترون، اتم دارای بار می‌شود",
+    "similar": [],
+    "qnum": 4,
+    "imgbase": "8_3_4"
+  },
+  {
+    "id": 56,
+    "grade": 8,
+    "chapter": 3,
+    "domain": "شیمی ـ ترکیب و ساختار ماده",
+    "cognitive": "دانستن",
+    "year": "۲۰۱۱",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "در یک مولکول H₂SO₄ تعداد اتم‌های هیدروژن، گوگرد و اکسیژن را مشخص کنید.",
+    "answer": "پاسخ:\nهیدروژن: ۲\nگوگرد: ۱\nاکسیژن: ۴\nتحلیل کوتاه: عدد پایین هر نماد، تعداد اتم‌های آن عنصر را نشان می‌دهد",
+    "similar": [],
+    "qnum": 5,
+    "imgbase": "8_3_5"
+  },
+  {
+    "id": 57,
+    "grade": 8,
+    "chapter": 3,
+    "domain": "شیمی ـ ساختار ماده",
+    "cognitive": "کاربرد",
+    "year": "۲۰۱۱",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "لاستیک یک خودرو از روی یک قوطی عبور می‌کند و آن را کاملاً له می‌کند. درباره\nاتم‌های موجود در ساختار قوطی، کدام یک درست است؟\nالف) اتم‌ها شکسته شده‌اند،\nب)اتم‌ها پهن شده‌اند،\nج)اتم‌ها تغییری نکرده‌اند،\nد) اتم‌ها به اتم‌های دیگری تبدیل شده‌اند.",
+    "answer": "پاسخ: گزینه ج اتم‌ها از بین نرفته‌اند؛ آرایش و فاصله آن‌ها تغییر کرده است.\nتحلیل کوتاه: تغییر شکل جسم باعث نابودی اتم‌های آن نمی‌شود.",
+    "similar": [],
+    "qnum": 6,
+    "imgbase": "8_3_6"
+  },
+  {
+    "id": 58,
+    "grade": 9,
+    "chapter": 14,
+    "domain": "زیست",
+    "cognitive": "بکاربستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "ورود و خروج اکسیژن و کربن دی اکسید بین هوا و خون در کدام یک از جانوران\nزیر از راه پوست انجام می\nشود؟\nالف)ماهی ب) قورباغه ج) نهنگ د) تمساح",
+    "answer": "پاسخ: گزینه ب",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "9_14_1"
+  },
+  {
+    "id": 59,
+    "grade": 9,
+    "chapter": 14,
+    "domain": "زیست",
+    "cognitive": "بکاربستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "پرندگان در هوای سرد پرهای خود را پف می کنند. این رفتار چه کمکی به پرنده\nمی کند؟\nالف) تولید گرما را افزایش می دهد.\nب) از خشک شدن پوست جلوگیری می کند.\nج)از دست دادن گرما را کاهش می دهد.\nد)پرها را از آسیب محافظت می کند",
+    "answer": "پاسخ: گزینه ج",
+    "similar": [],
+    "qnum": 2,
+    "imgbase": "9_14_2"
+  },
+  {
+    "id": 60,
+    "grade": 9,
+    "chapter": 15,
+    "domain": "زیست",
+    "cognitive": "دانستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "کدام جاندار تولید کننده است؟\nالف) درخت ب) ماهی ج) حشره د) پرنده",
+    "answer": "پاسخ: گزینه الف",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "9_15_1"
+  },
+  {
+    "id": 61,
+    "grade": 9,
+    "chapter": 14,
+    "domain": "زیست",
+    "cognitive": "دانستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "این جدول چهار گروه جانور را با برخی از ویژگی های هر گروه نشان می دهد.\nدرزیر هر گروه از جانوران یک علامت در کنار ویژگی ای که متعلق به آن گروه\nهست بگذارید.\nبعضی از گروه ها ممکن است بیش ازیک ویژگی داشته باشند.\n------------------------------------------------------------------------\n  ویژگی            پستانداران   دوزیستان    ماهی ها       پرندگان\n  ---------------- ------------ ----------- ------------- ----------------\n  غده های شیری\nپولک\nپر\nپوست مرطوب\nآبشش\nمو                                                      \n  ------------------------------------------------------------------------",
+    "answer": "پاسخ: \n{{IMG}}\nپاسخ:",
+    "similar": [],
+    "qnum": 3,
+    "imgbase": "9_14_3"
+  },
+  {
+    "id": 62,
+    "grade": 7,
+    "chapter": 14,
+    "domain": "زیست",
+    "cognitive": "بکاربستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "چگونه واکسن زدن به پیشگیری از بیماری هایی چون آنفولانزا کمک می کند؟\nالف) واکسن زدن باعث جذب بهتر غذا می شود.\nب) واکسن زدن جریان خون را زیادتر می کند.\nج)واکسن زدن باعث تحریک تولید پادتن می شود.\nد) واکسن زدن باعث می شود که داروها موثرتر عمل کند",
+    "answer": "پاسخ: گزینه 3",
+    "similar": [],
+    "qnum": 3,
+    "imgbase": "7_14_3"
+  },
+  {
+    "id": 63,
+    "grade": 7,
+    "chapter": 12,
+    "domain": "زیست",
+    "cognitive": "دانستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "کلسیم برای قوی بودن استخوان لازم است. کدام یک از غذاهای زیر منبع مناسبی\nاز کلسیم است؟\nالف) برنج ب) ماکارونی ج) گوشت قرمز د) پنیر",
+    "answer": "پاسخ: گزینه 4",
+    "similar": [],
+    "qnum": 3,
+    "imgbase": "7_12_3"
+  },
+  {
+    "id": 64,
+    "grade": 9,
+    "chapter": 15,
+    "domain": "زیست",
+    "cognitive": "بکاربستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "قسمت الف - جدول زیر اندازه جمعیت خرگوش ها و یک نوع گربه وحشی به نام سیاه\nگوش را در فاصله سال1375 تا 1383 در یک منطقه نشان می دهد.\nتغییراتی را که در جمعیت این دو جانور در فاصله سال های 1375 تا 1383 بوجود\nآمده را شرح دهید.\n\n{{IMG}}\nب) یک دلیل احتمالی را برای تغییر تعداد سیاه گوش ها در سال\n1383 در مقایسه با سال 1375 بنویسید.",
+    "answer": "پاسخ:\nالف)کاهش جمعیت هر دو جانور\nخرگوش کاهش می یاید چون توسط سیاه گوش خورده می شوند یا\nغذا نمی یابد.\nسیاه گوش کاهش می یابد چون خرگوش های کمتری برای خوردن\nوجود دارد.\nب) سیاه گوش کاهش می یابد چون به تعداد کافی خرگوش برای خوردن وجود ندارد.\nیا ممکن است عوامل دیگری در کاهش تعداد آن ها نقش داشته باشند. مانند شکار\nسیاه گوش توسط شکارچیان سودجو- تخریب زیستگاه آن ها توسط انسان ها- انتشار\nبیماری در بین آن ها و....",
+    "similar": [],
+    "qnum": 2,
+    "imgbase": "9_15_2"
+  },
+  {
+    "id": 65,
+    "grade": 7,
+    "chapter": 11,
+    "domain": "زیست",
+    "cognitive": "استدلال کردن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "بهرام می خواهد بداند که آیا هنگام تنفس سلولی کربن دی اکسید آزاد می شود\nیا نه. او آزمایش زیر راترتیب داده است. هوا در جهتی که با فلش نشان داده\nشده به دستگاه وارد می شود.\nالف) سدیم هیدروکسید، کربن دی اکسید را جذب می کند. آب آهک در کنار کربن دی\nاکسید از حالت شفاف به حالت کدر تغییر رنگ می دهد.\nچرا لوله های آزمایش 1 و 2در این آزمایش قرار داده شده است؟\n\n{{IMG}}\nقسمت ب) آب آهک درون لوله آزمایش 4کدر می شود چه ماده ای باعث ایجاد این\nپدیده شده و این ماده چگونه تولید شده است؟",
+    "answer": "پاسخ:\nالف) برا اینکه کربن دی اکسید هوا توسط سدیم هیدروکسید گرفته شود.\nآب آهک عامل کنترل است که مطمئن شویم پس از عبور هوا از روی سدیم هید\nروکسید، کربن دی اکسید\nوجود ندارد.\nب) کربن دی اکسید - کربن دی اکسید با تنفس سوسک ها تولید می شود.",
+    "similar": [],
+    "qnum": 4,
+    "imgbase": "7_11_4"
+  },
+  {
+    "id": 66,
+    "grade": 8,
+    "chapter": 1,
+    "domain": "شیمی",
+    "cognitive": "بکاربستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "برای تهیه آب مقطر، آب آشامیدنی را به جوش می آورند و سپس بخارآب را سرد\nکرده و مایع می کنند. آب مقطر در مقایسه با آب آشامیدنی هیچ طمعی ندارد.\nاختلاف طعم بخاطر کدام مورد زیر است؟\nالف) جوش آمدن آب در ᵒC 100 ب) انبساط آب بر اثر گرما\nج) تغییر چگالی آب بر اثر گرما د) تبخیر نشدن مواد معدنی موجود در آب",
+    "answer": "پاسخ:گزینه 4",
+    "similar": [],
+    "qnum": 6,
+    "imgbase": "8_1_6"
+  },
+  {
+    "id": 67,
+    "grade": 8,
+    "chapter": 1,
+    "domain": "شیمی",
+    "cognitive": "بکاربستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "زهر زنبور یک باز ( ماده ی قلیایی) است.\nدر هر مورد مشخص کنید آیا این ماده می تواند زهر زنبور را خنثی کند یا خیر؟\nآب:\nسرکه:\nآب لیمو:\nجوش شیرین:",
+    "answer": "پاسخ: سرکه ،آب لیمو",
+    "similar": [],
+    "qnum": 7,
+    "imgbase": "8_1_7"
+  },
+  {
+    "id": 68,
+    "grade": 8,
+    "chapter": 1,
+    "domain": "شیمی",
+    "cognitive": "بکاربستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "مریم مقداری آب و روغن در یک ظرف می ریزد و با قاشق چای خوری هم می زند،\nسپس او مخلوط را به حال خود می گذارد، و همان طور که در شکل می بینید،\nمشاهده می کند که\nروغن روی آب قرار می گیرد. توضیح دهید چرا روغن روی آب قرار می گیرد؟\n\n{{IMG}}",
+    "answer": "پاسخ: چون چگالی روغن کمتر از آب است.",
+    "similar": [],
+    "qnum": 8,
+    "imgbase": "8_1_8"
+  },
+  {
+    "id": 69,
+    "grade": 8,
+    "chapter": 1,
+    "domain": "شیمی",
+    "cognitive": "بکاربستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 1,
+    "question": "پارسا در دو ظرف، در هر کدام 20 گرم شکر ریخت. همان طور که در شکل می بینید\nظرف 1 دارای 50 سانتی متر مکعب آب و ظرف 2 دارای 150 سانتی متر مکعب آب\nاست.\n\n{{IMG}}\nکدام محلول رقیق تر است؟\nمحلول ظرف 1 محلول ظرف 2\nپاسخ خود را توضیح دهید.",
+    "answer": "پاسخ: چون آب بیشتری در ظرف 2 وجود دارد.",
+    "similar": [],
+    "qnum": 9,
+    "imgbase": "8_1_9"
+  },
+  {
+    "id": 70,
+    "grade": 8,
+    "chapter": 2,
+    "domain": "شیمی",
+    "cognitive": "بکاربستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "چهار دانش آموز درباره زنگ زدن میخ تحقیق می کنند.\nمحمود 2 عدد میخ را در ظرف 1 می گذارد.\nاحمد 2 عدد میخ را در ظرف 2 می گذارد و آن ها را با روغن می پوشاند.\nسعید 2 عدد میخ را در ظرف 3 می گذارد و در آن ها را می بندد.\nمسعود 2 عدد میخ را در ظرف 4 می گذارد و کمی آب در آن می ریزد.\n\n{{IMG}}\nبعد از یک هفته در کدام ظرف میخ ها بیشتر زنگ زده است؟\nالف)ظرف 1 ب) ظرف 2\nج) ظرف 3 د) ظرف 4",
+    "answer": "پاسخ:گزینه 4",
+    "similar": [],
+    "qnum": 7,
+    "imgbase": "8_2_7"
+  },
+  {
+    "id": 71,
+    "grade": 8,
+    "chapter": 2,
+    "domain": "شیمی",
+    "cognitive": "استدلال کردن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "{{IMG}}\nدو ظرف یکی دارای هیدرو کلریک اسید و دیگری دارای سدیم هیدروکسید،مطابق\nشکل مقابل دقیقا هم وزن سنگ ترازو هستند.\nدو محلول به دقت با هم مخلوط می شوند و ظرف خالی هم روی کفه ترازوگذاشته می\nشود.\n\n{{IMG}}\nکدام شکل حالت ترازو را بعد از مخلوط کردن دو محلول نشان می دهد؟\nشکل الف\nشکل ب\nشکل ج\nپاسخ خود را توضیح دهید.",
+    "answer": "پاسخ: گزینه3 هیدرو کلریک اسید و سدیم هیدروکسید با هم واکنش انجام داده و\nنمک و آب\nتولید می کنند و جرم در طول انجام و اکنش حفظ می شود.",
+    "similar": [],
+    "qnum": 8,
+    "imgbase": "8_2_8"
+  },
+  {
+    "id": 72,
+    "grade": 8,
+    "chapter": 1,
+    "domain": "شیمی",
+    "cognitive": "بکاربستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "به دانش آموزی مخلوطی از قطعات کوچک آهن و مس دادهایم. او برای جدا کردن\nاین مخلوط از چه روشی می تواند استفاده کند؟\n- توضیح دهید که چرا روشی که شما انتخاب کرده اید، مناسب است.\n- توضیح دهید که چرا روش دیگر مناسب نیست.\nروش1: مخلوط را روی کاغذ پهن کند و سپس آهن ربایی از باالی آن عبور دهد.\nروش2: : مخلوط را در یک ظرف آب بریزد و صاف کند.",
+    "answer": "پاسخ:روش1 این روش موثر است زیرا آهن دارای خاصیت مغناطیسی است ولی مس\nنیست.\nروش2 موثر نیست زیرا هر دو در آب حل نمی شوند",
+    "similar": [],
+    "qnum": 10,
+    "imgbase": "8_1_10"
+  },
+  {
+    "id": 73,
+    "grade": 7,
+    "chapter": 3,
+    "domain": "شیمی",
+    "cognitive": "دانستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 1,
+    "question": "کدام یک از موارد زیر بهترین رسانا برای گرما و الکتریسیته است؟\nالف) شیشه\nب) مس\nج) پلاستیک\nد)چوب",
+    "answer": "پاسخ:گزینه ب",
+    "similar": [],
+    "qnum": 6,
+    "imgbase": "7_3_6"
+  },
+  {
+    "id": 74,
+    "grade": 7,
+    "chapter": 3,
+    "domain": "شیمی",
+    "cognitive": "استدلال کردن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "در این جدول برخی خواص آب، جیوه و آهن نوشته شده است.\nحالت آب، جیوه و آهن در دمای 350درجه سانتی گراد چگونه است؟\n\n{{IMG}}",
+    "answer": "پاسخ: آب: گاز\nجیوه: مایع\nآهن: جامد",
+    "similar": [],
+    "qnum": 7,
+    "imgbase": "7_3_7"
+  },
+  {
+    "id": 75,
+    "grade": 8,
+    "chapter": 2,
+    "domain": "شیمی",
+    "cognitive": "دانستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 1,
+    "question": "کدام مثال یک فرآیند شیمیایی است که انرژی آزاد می کند؟\nالف)جوش آمدن آب\nب) پختن تخم مرغ خام\nج)روشن شدن چراغ نفتی\nد) حل شدن شکر در آب",
+    "answer": "پاسخ:گزینه ج",
+    "similar": [],
+    "qnum": 9,
+    "imgbase": "8_2_9"
+  },
+  {
+    "id": 76,
+    "grade": 7,
+    "chapter": 10,
+    "domain": "فیزیک",
+    "cognitive": "بکاربستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "آرش سه ظرف با دمای مساوی دارد. او در هر کدام یک بطری آب سرد می گذارد. او\nچند دقیقه بعد دمای سطح بیرونی هر یک از ظرف ها را اندازه می گیرد. کدام\nجمله درست است؟\nالف) دمای سطح بیرونی هر سه ظرف با هم برابر است.\nب)دمای سطح بیرونی ظرف فلزی کمترین است.\nج)دمای سطح بیرونی ظرف مقوایی کمترین است.\nد)دمای سطح بیرونی ظرف های مقوایی و چوبی یکسان است.",
+    "answer": "پاسخ: \n{{IMG}}\nپاسخ: گزینه ب",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "7_10_1"
+  },
+  {
+    "id": 77,
+    "grade": 7,
+    "chapter": 2,
+    "domain": "فیزیک",
+    "cognitive": "دانستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "جرم و حجم آبی که در داخل یک ظرف منجمد می شود چه تغییری می یابد؟\nالف) جرم و حجم هر دو کاهش می یابد.\nب)جرم افزایش می یابد و حجم ثابت می ماند\nج)جرم ثابت می ماند و حجم افزایش می یابد.\nد)جرم ثابت می ماند و حجم کاهش می یابد.",
+    "answer": "پاسخ:گزینه ج",
+    "similar": [],
+    "qnum": 10,
+    "imgbase": "7_2_10"
+  },
+  {
+    "id": 78,
+    "grade": 7,
+    "chapter": 3,
+    "domain": "فیزیک",
+    "cognitive": "استدلال کردن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "دو بطری یکسان از نمونه های X و Y پر شده اند. محتویات این دو بطری را درون\nدو بطری کامل یکسان ولی بزرگتر انتقال داده ایم. مشاهده شد که نمونه X شکل\nظرف جدید را به خود گرفت ولی کاملا آن را پر نکرد اما نمونه Y شکل ظرف جدید\nرا به خود گرفت و کاملا آن را پر کرد. کدام عبارت زیر در مورد نمونه های X\nو Yدرست است؟\n\n{{IMG}}\nالف) ذرات X بزرگتر از ذرات Y هستند.\nب) ذرات Y بزرگتر از ذرات X هستند.\nج) ذرات X نسبت به ذرات Y به هم نزدیکترند.\nد) ذرات Y نسبت به ذرات X به هم نزدیکترند.",
+    "answer": "پاسخ:گزینه ج",
+    "similar": [],
+    "qnum": 8,
+    "imgbase": "7_3_8"
+  },
+  {
+    "id": 79,
+    "grade": 7,
+    "chapter": 2,
+    "domain": "فیزیک",
+    "cognitive": "بکاربستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "بادکنکی در دست یک کودک است و از گاز هلیوم پر شده است. ناگهان کودک نخ آن\nرا رها می کند و بادکنک به هوا می رود. چرا بادکنک به هوا می رود؟\nالف) هلیوم از هوا سنگین تر است. ب) هلیوم از هوا سبک تر است.\nج) هلیوم داخل بادکنک از هوا گرم تر است. د)هلیوم داخل بادکنک از هوا\nپرفشارتر است.",
+    "answer": "پاسخ:گزینه ب",
+    "similar": [],
+    "qnum": 11,
+    "imgbase": "7_2_11"
+  },
+  {
+    "id": 80,
+    "grade": 9,
+    "chapter": 4,
+    "domain": "فیزیک",
+    "cognitive": "استدلال کردن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "سارا ثابت ایستاده است و می بیند که کیانوش سوار بر دوچرخه است و در حال\nعبور از کنار او می باشد. کدام گزینه زیر در مورد زنگ دوچرخه کیانوش درست\nاست؟\nالف) زنگ نسبت به کیانوش و سارا متحرک است.\nب) زنگ نسبت به کیانوش و سارا متحرک نیست.\nج) زنگ نسبت به کیانوش متحرک اما نسبت به سارا ثابت است.\nد) زنگ نسبت به سارا متحرک اما نسبت به کیانوش ثابت است.",
+    "answer": "پاسخ:گزینه4",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "9_4_1"
+  },
+  {
+    "id": 81,
+    "grade": 7,
+    "chapter": 8,
+    "domain": "فیزیک",
+    "cognitive": "دانستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "{{IMG}}\n یک فنر فشرده شده است. فنر فشرده شده چه نوع انرژی دارد؟\nالف) گرمایی ب) الکتریکی\nج) ذخیره شده د) شیمیایی",
+    "answer": "پاسخ:گزینه ج",
+    "similar": [],
+    "qnum": 3,
+    "imgbase": "7_8_3"
+  },
+  {
+    "id": 82,
+    "grade": 7,
+    "chapter": 14,
+    "domain": "فیزیک",
+    "cognitive": "استدلال کردن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "{{IMG}}\nیک آینه تخت پشت یک صفحه پنهان است. شعاع های نور لیزر به آن آینه برخورد\nمی کنند و مطابق شکل زیر بازتاب می شوند.\nکدام شکل طرز قرار گرفتن آینه را در پشت صفحه نشان می دهد؟\n\n{{IMG}}",
+    "answer": "پاسخ:گزینه الف",
+    "similar": [],
+    "qnum": 4,
+    "imgbase": "7_14_4"
+  },
+  {
+    "id": 83,
+    "grade": 9,
+    "chapter": 9,
+    "domain": "فیزیک",
+    "cognitive": "دانستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 1,
+    "question": "از کدام یک از اشیای زیر به احتمال زیاد ، می توان به عنوان اهرم استفاده\nکرد؟\nالف) غلتک خمیر ب) در بازکن نوشابه\nج) نرده بان د) زیپ کیف",
+    "answer": "پاسخ:گزینه ب",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "9_9_1"
+  },
+  {
+    "id": 84,
+    "grade": 8,
+    "chapter": 9,
+    "domain": "فیزیک",
+    "cognitive": "بکاربستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "{{IMG}}\nمطابق شکل زیردر یک مدار الکتریکی یک باتری 5/4ولتی، یک مقاومت و یک\nآمپرسنج به صورت متوالی قرارگرفته اند. اگر آمپرسنج عدد 5/0آمپر را نشان\nبدهد مقدار مقاومت چقدراست؟",
+    "answer": "پاسخ: با توجه به قانون اهم مقدار مقاومت از تقسیم مقدار ولتاژ مدار(در این\nسوال برابر با ولتاژ باتری) تقسیم بر مقدار جریان عبوری از مدار (که از\nآمپرسنج میگذرد)بدست می آید. این مقدار برابر با 5/4تقسیم بر 5/0می باشد که\nعدد 9 اهم را نتیجه میدهد.",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "8_9_1"
+  },
+  {
+    "id": 85,
+    "grade": 7,
+    "chapter": 8,
+    "domain": "فیزیک",
+    "cognitive": "دانستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "{{IMG}}\nجعفر توپی را به هوا پرتاب می کند. او می بیند که توپ تا نقطه الف بالا\nمی رود و سپس به سمت زمین باز میگردد و به نقطه ب روی زمین برخورد می کند و\nسپس دوباره به سمت بالا بر میگردد. دو سؤال زیر را پاسخ دهید.\nالف)علت بازگشت توپ از نقطه الف به سمت نقطه ب چیست؟\nب) توپ پس از برخورد به زمین تا کجا بالا می رود؟",
+    "answer": "پاسخ:\nالف) جاذبه زمین\nب)توپ تا نقطه ای پایین تر از نقطه الف بالا می رود (به نقطه الف نمی رسد)\nدلیل این موضوع از دست دادن انرژی توپ در هنگام برخورد با نقطه ب",
+    "similar": [],
+    "qnum": 4,
+    "imgbase": "7_8_4"
+  },
+  {
+    "id": 86,
+    "grade": 7,
+    "chapter": 6,
+    "domain": "زمین",
+    "cognitive": "دانستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "درصد کدام گاز در اتمسفر زمین در حال زیاد شدن است؟\nالف)کربن دی اکسید ب)نیتروژن ج) بخار آب د) آرگون",
+    "answer": "پاسخ:الف",
+    "similar": [],
+    "qnum": 2,
+    "imgbase": "7_6_2"
+  },
+  {
+    "id": 87,
+    "grade": 9,
+    "chapter": 7,
+    "domain": "زمین",
+    "cognitive": "دانستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "علت زلزله چیست؟\nحرکت در راستای گسل یا حرکت صفحات زمین",
+    "answer": "پاسخ و تحلیل برای این سوال ثبت نشده است.",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "9_7_1"
+  },
+  {
+    "id": 88,
+    "grade": 9,
+    "chapter": 10,
+    "domain": "زمین",
+    "cognitive": "بکاربستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "دانش آموزی ادعا می کند وزن او روی کره ماه کمتر از وزن او روی کره زمین\nاست. آیا ادعای او درست است ودلیل این ادعا چیست؟\nبله- به دلیل این که شتاب گرانش ماه کمتر از زمین است. (هر سیاره ای دارای\nشتاب گرانش مخصوص به خود می باشد.)\nجرم جسم ثابت است و با تغییر مکان جسم، جرم آن عوض نمی شود اما وزن با\nتغییر شتاب گرانشی تغییر می کند.",
+    "answer": "پاسخ و تحلیل برای این سوال ثبت نشده است.",
+    "similar": [],
+    "qnum": 1,
+    "imgbase": "9_10_1"
+  },
+  {
+    "id": 89,
+    "grade": 9,
+    "chapter": 10,
+    "domain": "زمین",
+    "cognitive": "دانستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 1,
+    "question": "زمین دور محور خود می چرخد. این چرخش باعث ایجاد چه چیزی می شود؟\nالف) ایجاد فصل ها ب) خورشید گرفتگی\nج) ایجاد شب و روز د) ایجاد جزر و مد",
+    "answer": "پاسخ:گزینه ج",
+    "similar": [],
+    "qnum": 2,
+    "imgbase": "9_10_2"
+  },
+  {
+    "id": 90,
+    "grade": 9,
+    "chapter": 10,
+    "domain": "زمین",
+    "cognitive": "دانستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "کدام یک از موارد زیر درباره سایه یک درخت در یک روز آفتابی درست است؟\nالف) اندازه سایه در طول روز ثابت است.\nب)کوتاهترین سایه مربوط به وقتی است که خورشید بالای سر است.\nج)کوتاهترین سایه در زمان طلوع خورشید و بلندترین سایه در هنگام غروب\nخورشید دیده می شود.\nد) کوتاهترین سایه در زمان غروب خورشید و بلندترین سایه در هنگام طلوع\nخورشید دیده می شود.",
+    "answer": "پاسخ:گزینه ب",
+    "similar": [],
+    "qnum": 3,
+    "imgbase": "9_10_3"
+  },
+  {
+    "id": 91,
+    "grade": 7,
+    "chapter": 6,
+    "domain": "زمین",
+    "cognitive": "دانستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 1,
+    "question": "کدام یک از فرآیندهای زیر نتیجه تاثیر نیروی جاذبه ماه بر روی زمین است؟\nالف) زلزله ب) جزر و مد\nج)خورشید گرفتگی کامل د) چرخش زمین به دور محور خود",
+    "answer": "پاسخ:گزینه ب",
+    "similar": [],
+    "qnum": 3,
+    "imgbase": "7_6_3"
+  },
+  {
+    "id": 92,
+    "grade": 7,
+    "chapter": 6,
+    "domain": "زمین",
+    "cognitive": "دانستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "چهار فرآیند در زیر توضیح داده شده است. نام فرآیندها را در هرمورد بنویسید\n(نفوذ- بارش - تبخیر- میعان)\nقطره آب از ارتفاعی معین به زمین می افتد : بارش\nآب در فضای میان الیه های سنگ و خاک حرکت می کند : نفوذ\nآب های سطحی از حالت مایع به حالت گاز در می آیند : تبخیر\nآب درون اتمسفر از حالت گاز به حالت مایع در می آید: میعان",
+    "answer": "پاسخ و تحلیل برای این سوال ثبت نشده است.",
+    "similar": [],
+    "qnum": 4,
+    "imgbase": "7_6_4"
+  },
+  {
+    "id": 93,
+    "grade": 7,
+    "chapter": 7,
+    "domain": "زمین",
+    "cognitive": "بکاربستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 2,
+    "question": "آب بعضی از چاههای آرتزین (آب فشان) بسیار داغ است و جانوران نمی توانند از\nآن ها بیاشامند.\nگرمای زیر سطح زمین آب را داغ می کند. چرا آبی که از درون لوله بیرون می\nآید و به زمین می ریزد داغ است؟",
+    "answer": "پاسخ: گرمای زیر سطح زمین آب را داغ می کند.",
+    "similar": [],
+    "qnum": 6,
+    "imgbase": "7_7_6"
+  },
+  {
+    "id": 94,
+    "grade": 7,
+    "chapter": 7,
+    "domain": "زمین",
+    "cognitive": "بکاربستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 1,
+    "question": "{{IMG}}\nدر چاه آرتزین (آب فشان) آب در میان یکی از لایه های سنگی ذخیره شده است.\nقسمتی از چاه آرتزین در\nزیر نشان داده شده است.\nاگر یک لوله را درون این لایه سنگی قرار دهیم آب از لوله بالا می آید و روی\nزمین می ریزد.\n\n{{IMG}}\nچه چیزی باعث حرکت آب به سمت بالا شده است؟\nالف) الکتریسیته\nب) خاصیت آهنربایی\nج)فشار\nد)گرانش",
+    "answer": "پاسخ:گزینه ج",
+    "similar": [],
+    "qnum": 7,
+    "imgbase": "7_7_7"
+  },
+  {
+    "id": 95,
+    "grade": 7,
+    "chapter": 7,
+    "domain": "زمین",
+    "cognitive": "بکاربستن",
+    "year": "2015",
+    "objective": "",
+    "secretariat": "",
+    "level": 3,
+    "question": "با توجه به سوال قبل و مطابق شکل زیر بیش از صد سال است که از یکی از لوله\nهای آب استفاده می شود. این لوله بسته نشده است اما مقدار آبی که صد سال\nپیش از لوله خارج می شد خیلی بیشتر از مقدار آبی است که امروز از آن خارج\nمی شود. علت تغییر مقدار آب چیست؟\n\n{{IMG}}\nالف) در لایه سنگی آب کمتری وجود دارد.\nب) در لایه سنگی آب بیشتری وجود دارد.\nج) لایه سنگی به عمق بیشتری فرو رفته است .\nد) لایه سنگی به سطح زمین نزدیک تر شده است.",
+    "answer": "پاسخ:گزینه الف",
+    "similar": [],
+    "qnum": 8,
+    "imgbase": "7_7_8"
+  }
+];
+
+</script>
+<script>
+/* ===================== TIMSS Science Bank — App Logic ===================== */
+
+const CHAPTER_TITLES = {
+  7: {
+    1:'تفکر و تجربه', 2:'اندازه‌گیری در علوم و ابزارهای آن', 3:'اتم‌ها؛ الفبای مواد',
+    4:'مواد پیرامون ما', 5:'از معدن تا خانه', 6:'سفر آب روی زمین',
+    7:'سفر آب درون زمین', 8:'انرژی و تبدیل‌های آن', 9:'منابع انرژی',
+    10:'گرما و بهینه‌سازی مصرف انرژی', 11:'یاخته و سازمان‌بندی آن', 12:'سفره سلامت',
+    13:'سفر غذا', 14:'گردش مواد', 15:'تبادل با محیط'
+  },
+  8: {
+    1:'مخلوط و جداسازی مواد', 2:'تغییرهای شیمیایی در خدمت زندگی', 3:'از درون اتم چه خبر',
+    4:'تنظیم عصبی', 5:'حس و حرکت', 6:'تنظیم هورمونی',
+    7:'الفبای زیست فناوری', 8:'تولیدمثل در جانداران', 9:'الکتریسیته',
+    10:'مغناطیس', 11:'کانی‌ها', 12:'سنگ‌ها',
+    13:'هوازدگی', 14:'نور و ویژگی‌های آن', 15:'شکست نور'
+  },
+  9: {
+    1:'مواد و نقش آن‌ها در زندگی', 2:'رفتار اتم‌ها با یکدیگر', 3:'به‌دنبال محیطی بهتر برای زندگی',
+    4:'حرکت چیست', 5:'نیرو', 6:'زمین‌ساخت ورقه‌ای',
+    7:'آثاری از گذشته زمین', 8:'فشار و آثار آن', 9:'ماشین‌ها',
+    10:'نگاهی به فضا', 11:'گوناگونی جانداران', 12:'دنیای گیاهان',
+    13:'جانوران بی‌مهره', 14:'جانوران مهره‌دار', 15:'باهم‌زیستن'
+  }
+};
+
+const GRADE_INFO = {
+  7:{ label:'پایه هفتم', title:'علوم پایه هفتم', desc:'مبانی روش علمی، ماده، انرژی و زیست‌شناسی' },
+  8:{ label:'پایه هشتم', title:'علوم پایه هشتم', desc:'شیمی، ساختار اتم، الکتریسیته و زیست‌شناسی انسان' },
+  9:{ label:'پایه نهم', title:'علوم پایه نهم', desc:'حرکت و نیرو، الکتریسیته، زمین‌شناسی و زیست‌فناوری' },
+};
+
+const LEVEL_LABEL = {1:'آسان', 2:'متوسط', 3:'دشوار'};
+const LEVEL_TO_STARS5 = {1:2, 2:3, 3:5};
+
+function starsHTML(level){
+  const filled = LEVEL_TO_STARS5[level] || 3;
+  let s='';
+  for(let i=1;i<=5;i++){ s += i<=filled ? '★' : '☆'; }
+  return s;
+}
+
+function byGradeChapter(grade, chapter){
+  return QUESTIONS.filter(q => q.grade === grade && q.chapter === chapter);
+}
+
+function chapterCounts(grade){
+  const map = {};
+  QUESTIONS.filter(q=>q.grade===grade).forEach(q=>{
+    map[q.chapter] = (map[q.chapter]||0)+1;
+  });
+  return map;
+}
+
+/* ---------------- View switching ---------------- */
+const VIEWS = ['view-home','view-intro','view-grades','view-chapters','view-questions'];
+function setView(id){
+  VIEWS.forEach(v=>{
+    document.getElementById(v).classList.toggle('hidden', v!==id);
+  });
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function goHome(){ setView('view-home'); }
+function showIntro(){
+  const bannerImg = document.getElementById('introBannerImg');
+  const bannerBox = document.getElementById('introBannerBox');
+  bannerImg.src = INTRO_BANNER_IMAGE || '';
+  bannerBox.classList.toggle('has-img', !!INTRO_BANNER_IMAGE);
+
+  const imgEl = document.getElementById('introImage');
+  const imgSlot = document.getElementById('introImageSlot');
+  imgEl.src = INTRO_IMAGE || '';
+  imgSlot.classList.toggle('has-media', !!INTRO_IMAGE);
+
+  const vidEl = document.getElementById('introVideo');
+  const vidSlot = document.getElementById('introVideoSlot');
+  if(INTRO_VIDEO){
+    vidEl.src = INTRO_VIDEO;
+    vidSlot.classList.add('has-media');
+  } else {
+    vidSlot.classList.remove('has-media');
+  }
+  setView('view-intro');
+}
+function showBank(){ renderGrades(); setView('view-grades'); }
+
+function renderGrades(){
+  const grid = document.getElementById('gradeGrid');
+  grid.innerHTML = '';
+  [7,8,9].forEach(g=>{
+    const info = GRADE_INFO[g];
+    const count = QUESTIONS.filter(q=>q.grade===g).length;
+    const card = document.createElement('button');
+    card.className = 'grade-card';
+    card.onclick = ()=> showChapters(g);
+    card.innerHTML = `
+      <div class="grade-badge">${g}</div>
+      <h3>${info.title}</h3>
+      <p>${info.desc}</p>
+      <span class="grade-count">${count} سوال تحلیلی</span>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function showChapters(grade){
+  document.getElementById('chapterGradeLabel').textContent = GRADE_INFO[grade].label;
+  document.getElementById('chapterHeroTitle').textContent = GRADE_INFO[grade].title;
+  const grid = document.getElementById('chapterGrid');
+  grid.innerHTML = '';
+  const counts = chapterCounts(grade);
+  for(let ch=1; ch<=15; ch++){
+    const cnt = counts[ch] || 0;
+    const title = (CHAPTER_TITLES[grade] && CHAPTER_TITLES[grade][ch]) || ('فصل ' + ch);
+    const card = document.createElement('button');
+    card.className = 'chapter-card' + (cnt===0 ? ' empty' : '');
+    card.disabled = cnt===0;
+    if(cnt>0) card.onclick = ()=> showQuestions(grade, ch, title);
+    card.innerHTML = `
+      <div class="chapter-num">${ch}</div>
+      <h4>فصل ${ch} — ${title}</h4>
+      <div class="qcount">${cnt>0 ? cnt+' سوال' : 'به‌زودی'}</div>
+    `;
+    grid.appendChild(card);
+  }
+  setView('view-chapters');
+}
+document.getElementById('backToChaptersBtn')?.addEventListener('click', ()=>{
+  setView('view-chapters');
+});
+
+function renderTextWithImage(text, imgBase){
+  if(!text) return '';
+  const parts = text.split('{{IMG}}');
+  const totalImgs = parts.length - 1;
+  return parts.map((part, idx)=>{
+    const esc = escapeHTML(part).replace(/\n/g,'<br>');
+    if(idx === parts.length-1) return esc;
+    if(!imgBase){
+      return esc + `<div class="img-slot">
+        <img src="" alt="تصویر سوال">
+        <span class="ph">🖼️ محل تصویر</span>
+      </div>`;
+    }
+    const suffix = totalImgs > 1 ? `_${idx+1}` : '';
+    const filename = `${imgBase}${suffix}.jpg`;
+    const url = IMG_BASE_URL + filename;
+    return esc + `<div class="img-slot">
+      <img src="${url}" alt="تصویر سوال" data-filename="${filename}"
+           onload="this.closest('.img-slot').classList.add('has-img');"
+           onerror="this.style.display='none'; this.closest('.img-slot').classList.remove('has-img');">
+      <span class="ph">🖼️ نام فایل مورد نیاز: <b>${filename}</b><br>این فایل را در پوشه images/ ریپازیتوری آپلود کنید</span>
+    </div>`;
+  }).join('');
+}
+
+function escapeHTML(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+let toggleCounter = 0;
+function toggleAnswer(btnId, drawerId){
+  const btn = document.getElementById(btnId);
+  const drawer = document.getElementById(drawerId);
+  const isOpen = drawer.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+  btn.querySelector('.label').textContent = isOpen ? 'بستن پاسخ و تحلیل' : 'نمایش پاسخ و تحلیل';
+}
+
+function questionCardHTML(q, isSimilar, imgBase){
+  toggleCounter++;
+  const btnId = 'togbtn_' + toggleCounter;
+  const drawerId = 'togdraw_' + toggleCounter;
+  const cls = isSimilar ? 'similar-card' : 'q-card';
+  const label = isSimilar ? '✳️ سوال مشابه تألیفی' : '🧩 سوال اصلی (TIMSS)';
+
+  let metaPanel = '';
+  if(!isSimilar){
+    const rows = [];
+    if(q.objective) rows.push(`<div class="meta-row"><span class="k">🎯 هدف آموزشی:</span><span class="v">${escapeHTML(q.objective)}</span></div>`);
+    if(q.cognitive) rows.push(`<div class="meta-row"><span class="k">🧠 حیطه شناختی:</span><span class="v">${escapeHTML(q.cognitive)}</span></div>`);
+    rows.push(`<div class="meta-row stars-row"><span class="k">⭐ سطح دشواری:</span><span class="v">${starsHTML(q.level)} ${LEVEL_LABEL[q.level]}</span></div>`);
+    if(q.domain) rows.push(`<div class="meta-row"><span class="k">📚 حوزه محتوایی:</span><span class="v">${escapeHTML(q.domain)}</span></div>`);
+    if(q.year) rows.push(`<div class="meta-row"><span class="k">📅 سال:</span><span class="v">${escapeHTML(q.year)}</span></div>`);
+    if(q.secretariat) rows.push(`<div class="meta-row"><span class="k">🏛️ دبیرخانه:</span><span class="v">${escapeHTML(q.secretariat)}</span></div>`);
+    metaPanel = '<div class="meta-panel">' + rows.join('') + '</div>';
+  }
+
+  return `
+  <div class="${cls}">
+    ${metaPanel}
+    <span class="q-label">${label}</span>
+    <div class="q-body">${renderTextWithImage(q.question, imgBase)}</div>
+    <button class="toggle-btn" id="${btnId}" onclick="toggleAnswer('${btnId}','${drawerId}')">
+      <span class="chev">▾</span><span class="label">نمایش پاسخ و تحلیل</span>
+    </button>
+    <div class="answer-drawer" id="${drawerId}">
+      <div class="answer-inner">
+        <div class="a-title">✅ پاسخ و تحلیل</div>
+        ${renderTextWithImage(q.answer, imgBase ? imgBase + '_ans' : null)}
+      </div>
+    </div>
+  </div>`;
+}
+
+function showQuestions(grade, chapter, chapterTitle){
+  document.getElementById('qGradeLabel').textContent = GRADE_INFO[grade].label;
+  document.getElementById('qChapterLabel').textContent = 'فصل ' + chapter;
+  document.getElementById('qBannerTitle').textContent = `فصل ${chapter}: ${chapterTitle}`;
+  document.getElementById('qBannerSub').textContent = `${GRADE_INFO[grade].label} — سوالات تحلیلی تیمز و سوال مشابه تألیفی`;
+
+  // per-chapter banner
+  const bannerBox = document.getElementById('chapterBannerBox');
+  const bannerImg = document.getElementById('chapterBannerImg');
+  const bannerSrc = (CHAPTER_BANNERS[grade] && CHAPTER_BANNERS[grade][chapter]) || '';
+  bannerImg.onerror = ()=> bannerBox.classList.remove('has-img');
+  bannerImg.onload = ()=> bannerBox.classList.add('has-img');
+  bannerImg.src = bannerSrc;
+  bannerBox.classList.toggle('has-img', !!bannerSrc);
+  bannerBox.classList.toggle('tone-sunset', chapter % 2 === 0);
+
+  const list = byGradeChapter(grade, chapter);
+  const container = document.getElementById('questionsContainer');
+
+  if(list.length === 0){
+    container.innerHTML = `<div class="empty-note"><span class="big">🧪</span>سوالی برای این فصل هنوز ثبت نشده است.<br>به‌زودی تکمیل می‌شود.</div>`;
+  } else {
+    let html = '';
+    list.forEach(q=>{
+      html += questionCardHTML(q, false, q.imgbase);
+      (q.similar || []).forEach((s, si)=>{
+        const simBase = q.imgbase ? (q.imgbase + (si===0 ? '_b' : '_b' + (si+1))) : null;
+        html += questionCardHTML({
+          question: s.question, answer: s.answer, level:q.level
+        }, true, simBase);
+      });
+    });
+    container.innerHTML = html;
+  }
+  setView('view-questions');
+}
+
+/* ---------------- init: image placeholder helpers ---------------- */
+function bindImgFallback(imgId, phId){
+  const img = document.getElementById(imgId);
+  if(!img) return;
+  const wrap = img.closest('.image-banner, .ann-img, .logo-wrap');
+  const check = ()=>{
+    if(img.getAttribute('src') && img.getAttribute('src').trim() !== ''){
+      wrap && wrap.classList.add('has-img');
+      if(phId) document.getElementById(phId).style.display='none';
+    }
+  };
+  check();
+}
+document.addEventListener('DOMContentLoaded', ()=>{
+  bindImgFallback('siteLogoImg', null);
+  bindImgFallback('bannerImg', 'bannerPh');
+  bindImgFallback('ann1Img', null);
+  bindImgFallback('ann2Img', null);
+});
+
+/* ---------------- contact form → email ---------------- */
+const CONTACT_EMAIL = 'azaram2001@gmail.com';
+function sendContactMessage(evt){
+  evt.preventDefault();
+  const name = document.getElementById('cfName').value.trim();
+  const contact = document.getElementById('cfContact').value.trim();
+  const message = document.getElementById('cfMessage').value.trim();
+  const subject = encodeURIComponent('پیام جدید از بانک سوالات تیمز علوم');
+  const body = encodeURIComponent(
+    `نام: ${name}\nایمیل/تماس: ${contact}\n\nپیام:\n${message}`
+  );
+  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+  return false;
+}
+
+</script>
+</body>
+</html>
